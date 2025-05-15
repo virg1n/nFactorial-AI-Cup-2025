@@ -9,6 +9,6 @@ Fork this repository and build nFactorial Ai Cup 2025 projects
 
 
 ## Typeform to submit:
-https://docs.google.com/forms/d/e/1FAIpQLSfjnACTWf5xYKInMllmhy5Bchc-DnOXw6vEXsHmXI4XFPwZXw/viewform?usp=sf_link
+https://docs.google.com/forms/d/e/1FAIpQLSdjbTZXt-8P0OTyMEDTQDszE-YGI5KcLYsN6pwxHmX0Fa3tzg/viewform?usp=dialog
 
 ## DEADLINE: 25/05/2025 10:00
