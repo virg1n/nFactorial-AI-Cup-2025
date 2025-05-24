@@ -81,7 +81,8 @@ A few important notes:
 - You can type `end` command only after check if you did everything correctly (on separate output).
 - All actions are possible and you must do them.
 - You can only click in text. If you want to click in image just click in text nearby the image.
-- To order something in the shop, you need to click into its name.
+- To order something in the shop, you need to click into its name. You also can find it by search.
+- If you want to open vault in obsidian app, you need to click to its name.
 
 
 Objective: {objective} 
@@ -267,10 +268,12 @@ def ask_gemini_flash(aim, prompt="", history=None):
     if prompt == "":
         user_request_text = """
             Please take the next best action. The `pyautogui` library will be used to execute your decision. Your output will be used in a `json.loads` loads statement. Remember you only have the following 4 operations available: click, write, press, end
+            When you clicking on text, click only on english text, do not use symbols, just letter and words.
             Action:"""
     else:
         user_request_text = prompt + """
             Please take the next best action. The `pyautogui` library will be used to execute your decision. Your output will be used in a `json.loads` loads statement. Remember you only have the following 4 operations available: click, write, press, end
+            When you clicking on text, click only on english text, do not use symbols, just letter and words.
             Action:"""
 
     # --- Handle the very first turn of the conversation ---

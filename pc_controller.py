@@ -162,8 +162,8 @@ class CodeExecutor:
                 continue
         return modules
         
-    def generate_code(self, user_request: str) -> Optional[str]:
-        """Generate Python code based on user's natural language request."""
+    def generate_response(self, user_request: str) -> Dict[str, Optional[str]]:
+        """Generate Python code and/or explanatory text based on user's natural language request."""
         try:
             # Translate request to English if needed
             english_request = self.translate_to_english(user_request)
@@ -174,17 +174,25 @@ class CodeExecutor:
             # Get successful examples from history
             examples = self.history.get_successful_examples()
             
-            system_content = f"""You are a helpful assistant that generates Python code. 
-            Generate ONLY the Python code without any explanation or markdown formatting.
-            The code should be safe and handle errors appropriately.
-            Only use the following allowed modules: {available_modules}
-            Include all necessary imports from the allowed modules.
-            You can use requests, but do not use anything that requires API Keys.
-            Do not include ```python or ``` markers.
-            When user wants to update his notes, you should update this file: r"C:\\Users\\bogda\\Documents\\nFacObs\\Notes.md" in same format.
-            When user wants to update his TODOs, you should update this file: r"C:\\Users\\bogda\\Documents\\nFacObs\\Todos.md" in same format, using - [].
+            system_content = f"""You are a helpful assistant that can generate both Python code and explanatory text.
+            When responding, you should:
+            1. If the request requires code execution:
+               - Generate Python code without any explanation or markdown formatting
+               - Provide a brief summary of what the code will do
+               - Format your response as JSON with "code" and "explanation" fields
+            2. If the request is just for information:
+               - Provide a detailed explanation or answer
+               - Format your response as JSON with only the "explanation" field
+            
+            For code generation, follow these rules:
+            - Only use these allowed modules: {available_modules}
+            - Include all necessary imports from the allowed modules
+            - You can use requests, but do not use anything that requires API Keys
+            - Do not include ```python or ``` markers
+            - When user wants to update notes, use: r"C:\\Users\\bogda\\Documents\\nFacObs\\Notes.md"
+            - When user wants to update TODOs, use: r"C:\\Users\\bogda\\Documents\\nFacObs\\Todos.md"
 
-            For any matplotlib plots:
+            For matplotlib plots:
             1. Use plt.savefig() instead of plt.show()
             2. Save plots to a file in the current directory
             3. Print the path of the saved plot
@@ -203,20 +211,23 @@ class CodeExecutor:
             
             messages.append({
                 "role": "user",
-                "content": f"Generate Python code for the following request: {english_request}"
+                "content": f"Generate response for the following request: {english_request}"
             })
             
             response = self.client.chat.completions.create(
                 model="gpt-4-turbo-preview",
                 messages=messages,
                 temperature=0.1,
-                max_tokens=500
+                max_tokens=1000,
+                response_format={ "type": "json_object" }
             )
             
-            return response.choices[0].message.content.strip()
+            # Parse the JSON response
+            response_data = json.loads(response.choices[0].message.content.strip())
+            return response_data
         except Exception as e:
-            logging.error(f"Error generating code: {str(e)}")
-            return None
+            logging.error(f"Error generating response: {str(e)}")
+            return {"explanation": f"Error: {str(e)}", "code": None}
 
     def clean_code(self, code: str) -> str:
         """Remove markdown formatting and clean the code."""
@@ -310,6 +321,7 @@ def main():
     print("1. 'rename all images in C:/images to numbers from 0 to n'")
     print("2. 'создай новый файл hello.txt с текстом Привет мир'")
     print("3. 'покажи все файлы в текущей директории'")
+    print("4. 'explain how python list comprehension works'")
     
     while True:
         try:
@@ -340,35 +352,43 @@ def main():
                     print(f"{status} [{cmd['timestamp']}] {cmd['command']}")
                 continue
                 
-            print("\nGenerating and executing code...")
-            code = executor.generate_code(user_input)
+            print("\nGenerating response...")
+            response = executor.generate_response(user_input)
             
-            if code:
+            # If there's an explanation, show it first
+            if "explanation" in response and response["explanation"]:
+                print("\n📝 Explanation:")
+                print("-" * 50)
+                print(response["explanation"])
+                print("-" * 50)
+
+            # If there's code to execute
+            if "code" in response and response["code"]:
                 print("\nGenerated code:")
                 print("-" * 50)
-                print(code)
+                print(response["code"])
                 print("-" * 50)
                 
-                if executor.validate_code(code):
-                    if get_user_confirmation(code):
+                if executor.validate_code(response["code"]):
+                    if get_user_confirmation(response["code"]):
                         print("\nExecuting code...")
-                        success = executor.execute_code(code)
+                        success = executor.execute_code(response["code"])
                         if success:
                             print("✅ Command executed successfully!")
-                            executor.history.add_command(user_input, code, True)
+                            executor.history.add_command(user_input, response["code"], True)
                         else:
                             error_msg = "Error during execution"
                             print(f"❌ {error_msg}")
-                            executor.history.add_command(user_input, code, False, error_msg)
+                            executor.history.add_command(user_input, response["code"], False, error_msg)
                     else:
                         print("⚠️ Code execution cancelled by user")
-                        executor.history.add_command(user_input, code, False, "Cancelled by user")
+                        executor.history.add_command(user_input, response["code"], False, "Cancelled by user")
                 else:
                     error_msg = "Code validation failed - potentially unsafe operations detected"
                     print(f"❌ {error_msg}")
-                    executor.history.add_command(user_input, code, False, error_msg)
-            else:
-                error_msg = "Failed to generate code"
+                    executor.history.add_command(user_input, response["code"], False, error_msg)
+            elif not response.get("explanation"):
+                error_msg = "Failed to generate response"
                 print(f"❌ {error_msg}")
                 executor.history.add_command(user_input, "", False, error_msg)
                 
