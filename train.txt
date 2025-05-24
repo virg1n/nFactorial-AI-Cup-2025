@@ -1,0 +1,13 @@
+text,label
+"Move the cursor to the top-right corner and click.",0
+"Press Ctrl+Shift+T to reopen the last closed tab.",0
+"Draw a rectangle around the element at (100,200).",0
+"Generate a bar chart from this list: [1,3,2,5].",1
+"Write Python code to download a CSV from a URL.",1
+"Execute a Python script that resizes all images in a folder.",1
+"What’s the capital of France?",2
+"Explain how a binary search tree works.",2
+"Summarize the plot of *Pride and Prejudice*.",2
+"How many primes are there under 1 000?",2
+"Open Notepad and type 'Hello, world!'.",0
+"Run a Python function to compute Fibonacci numbers.",1

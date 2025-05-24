@@ -1,0 +1,143 @@
+Open the Start menu and pin 'File Explorer' to the taskbar.,0
+Launch Microsoft Word and change the font to 'Arial'.,0
+Open File Explorer and create a new folder 'C:/data/backup/'.,0
+Start Google Chrome and bookmark 'https://www.github.com'.,0
+Open the Task Manager and end the 'Notepad' process.,0
+Launch the Settings app and set the time zone to 'UTC'.,0
+Open Paint and resize the canvas to 800x600 pixels.,0
+Start the Calculator app and calculate '15 * 8'.,0
+Open the Microsoft Store and install 'Notepad++'.,0
+Launch VLC Media Player and play 'C:/videos/intro.mp4'.,0
+Open the Recycle Bin and empty it.,0
+Start the Snipping Tool and save a screenshot to 'C:/screenshots/screen.png'.,0
+Open Windows Defender and scan 'D:/downloads/'.,0
+Launch Slack and send 'Hello!' to the '#general' channel.,0
+Open the Photos app and crop 'C:/pictures/beach.jpg'.,0
+Start PowerPoint and apply the 'Fade' transition to slide 2.,0
+Open the Sound settings and enable 'Spatial sound'.,0
+Launch Epic Games Store and check for free games.,0
+Open the Device Manager and disable 'Bluetooth'.,0
+Start the Camera app and take a photo.,0
+Open Edge and go to 'https://www.bbc.com'.,0
+Launch Outlook and create a new calendar event for tomorrow.,0
+Open the Action Center and turn off 'Focus Assist'.,0
+Start the Xbox app and sign out.,0
+Open File Explorer and copy 'C:/files/data.csv' to 'D:/backup/'.,0
+Launch Chrome and open the 'History' page.,0
+Open the Control Panel and uninstall 'OldApp'.,0
+Start the Maps app and get directions from 'London' to 'Paris'.,0
+Open the Weather app and switch to Celsius.,0
+Launch OneDrive and sync 'C:/documents/'.,0
+Open the Taskbar settings and hide the search bar.,0
+Start the Disk Management tool and shrink 'C:/' by 10GB.,0
+Open Chrome and delete all cookies.,0
+Launch Excel and insert a new column at 'B' in a new sheet.,0
+Open the Keyboard settings and enable 'On-Screen Keyboard'.,0
+Start the Remote Desktop app and save connection settings.,0
+Open the System Tray and turn off 'Wi-Fi'.,0
+Launch Paint and fill the canvas with blue.,0
+Open the Network settings and forget 'HomeWiFi'.,0
+Start the Magnifier and invert colors.,0
+Open File Explorer and sort 'C:/pictures/' by date.,0
+Launch Zoom and mute the microphone.,0
+Open the Printer settings and set 'PrinterX' as default.,0
+Start the Windows Update settings and pause updates.,0
+Open Edge and pin the current tab.,0
+Launch File Explorer and delete 'C:/temp/oldfile.txt'.,0
+Open the Sound Mixer and increase 'System Sounds' to 80%.,0
+Start the Sticky Notes app and delete all notes.,0
+Open Chrome and open the 'Extensions' page.,0
+Launch Word and set the page layout to 'Landscape'.,0
+Merge 'C:/data/orders_jan.csv' and 'C:/data/orders_feb.csv' into 'C:/data/orders_q1.csv'.,1
+Convert 'C:/files/settings.json' to YAML and save as 'C:/files/settings.yaml'.,1
+Read 'C:/logs/server.log' and count lines with 'ERROR'.,1
+Download 'https://example.com/sample.txt' and save as 'C:/downloads/sample.txt'.,1
+Generate 50 random integers between 1 and 100 and save to 'C:/data/numbers.txt'.,1
+Scrape titles from 'https://blog.example.com' and save to 'C:/scraped/titles.txt'.,1
+Create a directory 'C:/temp/logs/' if it doesn’t exist.,1
+Rename 'C:/videos/clip.mp4' to 'C:/videos/clip_2024.mp4'.,1
+Fetch the current time from an API and save to 'C:/time/now.txt'.,1
+Extract all URLs from 'C:/data/links.txt' and save to 'C:/output/urls.txt'.,1
+\Parse 'C:/config/server.ini' and print the value of 'port'.,1
+Fetch 5 random quotes from 'https://api.quotable.io/random' and save to 'C:/quotes/quotes.json'.,1
+Read 'C:/api/data.json' and print the 'error' field.,1
+Compress 'C:/files/docs/' into 'C:/files/docs.zip'.,1
+Generate a QR code for 'https://example.com' and save as 'C:/codes/qr.png'.,1
+Calculate 7 factorial and print it.,1
+Send an email to 'report@example.com' with subject 'Daily Report' using SMTP.,1
+Parse 'C:/logs/app.log' and count '404' errors.,1
+Generate a bar plot from 'C:/data/sales.csv' column 'revenue' and save as 'C:/charts/revenue.png'.,1
+Read 'C:/data/expenses.csv' and sum the 'cost' column.,1
+Download 'https://example.com/icon.ico' and save to 'C:/images/icon.ico'.,1
+Append 'Task completed' to 'C:/logs/status.log'.,1
+Encrypt 'Confidential' with key 'key456' and save to 'C:/secure/conf.txt'.,1
+Decode the base64 string 'VGVzdGluZw==' and save to 'C:/output/test.txt'.,1
+Generate a character count from 'C:/texts/book.txt' and save to 'C:/output/count.csv'.,1
+Parse 'C:/data/feed.xml' and list all 'item' elements.,1
+Query 'C:/db/users.db' and fetch all rows from the 'accounts' table.,1
+Fetch the latest commit from 'https://api.github.com/repos/user/repo/commits' and save to 'C:/git/commit.txt'.,1
+Generate a line chart from 'C:/data/prices.csv' column 'price' and save as 'C:/charts/price.png'.,1
+Scrape all links from 'https://store.example.com' and save to 'C:/scraped/links.txt'.,1
+Convert 'C:/images/photo.jpg' to grayscale and save as 'C:/images/gray.jpg'.,1
+Generate a 16-character random password and save to 'C:/output/pass.txt'.,1
+Read 'C:/logs/errors.log' and extract lines with 'FAIL' to 'C:/output/fail.txt'.,1
+Backup 'C:/files/images/' to 'C:/backups/images_2024.zip'.,1
+Send a GET request to 'https://api.example.com/status' and save to 'C:/api/status.json'.,1
+Parse 'C:/data/grades.csv' and find the row with the lowest 'score'.,1
+Generate a pie chart from 'C:/data/time.csv' column 'hours' and save as 'C:/charts/time.png'.,1
+Read 'C:/texts/essay.txt' and count sentences.,1
+Download all images from 'https://photos.example.com' and save to 'C:/downloads/photos/'.,1
+"Create 'C:/db/sales.db' with table 'orders' and insert ['2024-02-01', 150].",1
+Convert 'C:/docs/note.md' to 'C:/docs/note.pdf'.,1
+Generate a random float between 0 and 10 and print it.,1
+Read 'C:/data/posts.json' and extract all 'id' values to 'C:/output/post_ids.txt'.,1
+Calculate the cube of 5 and save to 'C:/results/cube.txt'.,1
+What is the deepest lake in the world?,2
+Explain how a rainbow is formed.,2
+Write a haiku about the ocean.,2
+What are the health benefits of yoga?,2
+How does a hard drive store data?,2
+Tell me about the construction of the Eiffel Tower.,2
+What is the difference between a comet and an asteroid?,2
+Can you summarize the plot of 'Pride and Prejudice'?,2
+What are some tips for staying motivated?,2
+Describe how a volcano erupts.,2
+What is the longest river in the world?,2
+Explain quantum mechanics in simple terms.,2
+Write a short story about a lost astronaut.,2
+What are the disadvantages of solar energy?,2
+How does the human body digest food?,2
+Tell me about the development of the steam engine.,2
+What is the main theme of '1984' by George Orwell?,2
+Can you provide a recipe for homemade pizza?,2
+What are some strategies for learning math?,2
+Describe the migration of monarch butterflies.,2
+What is the largest desert in the world?,2
+Explain how a firewall protects a network.,2
+Write a poem about a forest.,2
+What are the drawbacks of recycling?,2
+How does an electric car charge?,2
+Tell me about the life of Leonardo da Vinci.,2
+What is the storyline of 'Inception'?,2
+Can you list ingredients for a pasta salad?,2
+What are some ways to reduce stress?,2
+Describe how clouds form.,2
+What is the oldest city in the world?,2
+Explain what a black hole is.,2
+Write a limerick about a bird.,2
+What are the cons of hydroelectric power?,2
+How does the human ear hear sound?,2
+Tell me about the Wright brothers' first flight.,2
+What is the lesson of 'The Little Prince'?,2
+Can you suggest a recipe for banana bread?,2
+What are some methods to boost productivity?,2
+Describe how tides are influenced by the moon.,2
+What is the slowest animal on Earth?,2
+Explain how a refrigerator works.,2
+Write a dialogue between a teacher and a student.,2
+What are the advantages of reading books?,2
+How does a wind turbine generate power?,2
+Tell me about the discovery of electricity.,2
+What is the moral of 'The Boy Who Cried Wolf'?,2
+Can you provide steps to tie a tie?,2
+What are some techniques for teamwork?,2
