@@ -1,6 +1,7 @@
 import pyautogui
 from PIL import ImageGrab
 import pytesseract
+from PIL import ImageGrab, ImageDraw, ImageFont
 from pytesseract import Output
 import cv2
 import numpy as np
@@ -212,3 +213,80 @@ def click_multi_words_ocr(
 def take_screenshot(path):
     screenshot = pyautogui.screenshot()
     screenshot.save(path)
+
+import pyautogui
+from PIL import ImageGrab, ImageDraw, ImageFont
+
+def show_grid_overlay(
+    rows: int,
+    cols: int,
+    save_path: str = "grid_overlay.png",
+    line_color: str = "red",
+    line_width: int = 2,
+    font_size: int = 40,
+    font_color: str = "red"
+) -> None:
+    """
+    Grab the full screen, draw an rows×cols grid on top, number each cell
+    from 0 to rows*cols-1 (row-major), and save to disk.
+    """
+    img = ImageGrab.grab().convert("RGB")
+    w, h = img.size
+    draw = ImageDraw.Draw(img)
+    font = ImageFont.load_default()
+
+    # draw vertical & horizontal grid lines
+    for c in range(1, cols):
+        x = c * w / cols
+        draw.line([(x, 0), (x, h)], fill=line_color, width=line_width)
+    for r in range(1, rows):
+        y = r * h / rows
+        draw.line([(0, y), (w, y)], fill=line_color, width=line_width)
+
+    # label each cell
+    cell_w = w / cols
+    cell_h = h / rows
+    for r in range(rows):
+        for c in range(cols):
+            idx = r * cols + c
+            # center of this cell
+            cx = (c + 0.5) * cell_w
+            cy = (r + 0.5) * cell_h
+            label = str(idx)
+            text_w, text_h = draw.textsize(label, font=font)
+            # offset to truly center the text
+            tx = cx - text_w / 2
+            ty = cy - text_h / 2
+            draw.text((tx, ty), label, fill=font_color, font=font)
+
+    img.save(save_path)
+    print(f"Saved {rows}×{cols} numbered grid overlay to {save_path}.")
+
+
+def click_grid_cell(
+    cell_index: int,
+    rows: int,
+    cols: int
+) -> None:
+    """
+    Click the center of a cell by its 0-based index in a rows×cols grid.
+    
+    Args:
+      cell_index: which cell to click, from 0 up to rows*cols-1 (row-major order)
+      rows: total number of rows in the grid
+      cols: total number of columns in the grid
+    """
+    # turn index → 1-based row & col
+    row = (cell_index // cols) + 1
+    col = (cell_index %  cols) + 1
+
+    screen_w, screen_h = pyautogui.size()
+    cell_w = screen_w  / cols
+    cell_h = screen_h / rows
+
+    # center point:
+    x = (col - 0.5) * cell_w
+    y = (row - 0.5) * cell_h
+
+    pyautogui.click(int(x), int(y))
+    print(f"Clicked cell #{cell_index} → (row={row},col={col}) at ({int(x)},{int(y)})")

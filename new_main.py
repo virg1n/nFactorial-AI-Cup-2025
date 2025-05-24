@@ -7,44 +7,40 @@ from GUI_functions import (
     click_coords,
     click_text_image,
     click_one_word_ocr,
-    click_multi_words_ocr
+    click_multi_words_ocr,
+    click_grid_cell
 )
 
-from LLM_functions import ask_gpt4o
+from LLM_functions import ask_gpt4o, ask_gpt4o_with_labels
 
 from functions import clean_json
+
+ROWS, COLS = 25, 15
 
 def main():
     done = False
     aim="Open chrome, in chrome open linkedin and find Arman Suleimenov"
     add_prompt = ""
     while not done:
-        answer, history = ask_gpt4o(aim, add_prompt, history=[])
+        answer, history = ask_gpt4o_with_labels(aim, add_prompt, history=[])
         add_prompt = ""
         cleaned_answer = clean_json(answer)
         answer = json.loads(cleaned_answer)
         for action in answer:
             print(action)
-            if action['operation_type'] == "press":
+            if action['operation'] == "press":
                 click_sequence(action["keys"], interval=0.2)
                 time.sleep(0.5)
 
-            elif action['operation_type'] == "write":
+            elif action['operation'] == "write":
                 for char in action["content"]:
                     pyautogui.write(char)
                 time.sleep(0.4)
 
-            elif action['operation_type'] == "click":
-                if len(action["text"].split(" ")) == 1:
-                    output = click_one_word_ocr((action["text"]))
-                else:
-                    output = click_multi_words_ocr(' '.join(action["text"].split()[:3]))
-                if (output == True):
-                    time.sleep(0.5)
-                else:
-                    add_prompt = "Previous Operation wasnt done. Try another method"
+            elif action['operation'] == "click":
+                click_grid_cell(int(action["label"]), ROWS, COLS)
 
-            elif action['operation_type'] == "end":
+            elif action['operation'] == "done":
                 print("Operation Done")
                 done = True
                 break
