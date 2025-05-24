@@ -7,47 +7,61 @@ from GUI_functions import (
     click_coords,
     click_text_image,
     click_one_word_ocr,
-    click_multi_words_ocr
+    click_multi_words_ocr,
+    click_easyocr_one_word,
+    click_easyocr_multi_words
 )
 
-from LLM_functions import ask_gpt4o
+from LLM_functions import ask_gpt4o, ask_gemini_flash
 
 from functions import clean_json
 
 def main():
     done = False
-    aim="Open chrome, in chrome open linkedin and find Arman Suleimenov"
+    aim="Open gmail in chrome and summorize my last 5 emails"
     add_prompt = ""
+    history = []
     while not done:
-        answer, history = ask_gpt4o(aim, add_prompt, history=[])
-        add_prompt = ""
+
+        # answer, history = ask_gpt4o(aim, add_prompt, history=[])
+        
+        answer, history = ask_gemini_flash(aim, add_prompt, history=history)
+        
         cleaned_answer = clean_json(answer)
         answer = json.loads(cleaned_answer)
+        print(answer)
         for action in answer:
-            print(action)
+            # print(action)
             if action['operation_type'] == "press":
                 click_sequence(action["keys"], interval=0.2)
                 time.sleep(0.5)
+                add_prompt = ""
 
             elif action['operation_type'] == "write":
                 for char in action["content"]:
                     pyautogui.write(char)
                 time.sleep(0.4)
+                add_prompt = ""
 
             elif action['operation_type'] == "click":
                 if len(action["text"].split(" ")) == 1:
-                    output = click_one_word_ocr((action["text"]))
+                    # output = click_one_word_ocr((action["text"]))
+                    output = click_easyocr_one_word(action['text'])
                 else:
-                    output = click_multi_words_ocr(' '.join(action["text"].split()[:3]))
+                    # output = click_multi_words_ocr(' '.join(action["text"].split()[:3]))
+                    output = click_easyocr_one_word(' '.join(action["text"].split()[:3]))
                 if (output == True):
                     time.sleep(0.5)
+                    add_prompt = ""
                 else:
-                    add_prompt = "Previous Operation wasnt done. Try another method"
+                    add_prompt = f"Clicking onto {action['text']} failed. Try another method or another text. Everything that was after clicking aborded"
+                    break
 
             elif action['operation_type'] == "end":
                 print("Operation Done")
                 done = True
                 break
+        
         
 
 
