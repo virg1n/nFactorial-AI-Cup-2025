@@ -18,7 +18,8 @@ from functions import clean_json
 
 def main():
     done = False
-    aim="Open gmail in chrome and summorize my last 5 emails"
+    # aim="Open arbuz.kz in chrome and order chicken."
+    aim="Open arbuz.kz in chrome and order chicken."
     add_prompt = ""
     history = []
     while not done:
@@ -28,19 +29,25 @@ def main():
         answer, history = ask_gemini_flash(aim, add_prompt, history=history)
         
         cleaned_answer = clean_json(answer)
-        answer = json.loads(cleaned_answer)
+        try:
+            answer = json.loads(cleaned_answer)
+        except:
+            answer, history = ask_gemini_flash(aim, add_prompt, history=history)
+            cleaned_answer = clean_json(answer)
+            answer = json.loads(cleaned_answer)
+            
         print(answer)
         for action in answer:
             # print(action)
             if action['operation_type'] == "press":
                 click_sequence(action["keys"], interval=0.2)
-                time.sleep(0.5)
+                time.sleep(1)
                 add_prompt = ""
 
             elif action['operation_type'] == "write":
                 for char in action["content"]:
                     pyautogui.write(char)
-                time.sleep(0.4)
+                time.sleep(1)
                 add_prompt = ""
 
             elif action['operation_type'] == "click":
@@ -51,7 +58,7 @@ def main():
                     # output = click_multi_words_ocr(' '.join(action["text"].split()[:3]))
                     output = click_easyocr_one_word(' '.join(action["text"].split()[:3]))
                 if (output == True):
-                    time.sleep(0.5)
+                    time.sleep(1)
                     add_prompt = ""
                 else:
                     add_prompt = f"Clicking onto {action['text']} failed. Try another method or another text. Everything that was after clicking aborded"

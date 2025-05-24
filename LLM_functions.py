@@ -11,6 +11,7 @@ load_dotenv()
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 
+
 SYSTEM_PROMPT_FOR_WTEXT = """
 You are operating a {operating_system} computer, using the same operating system as a human.
 
@@ -77,8 +78,10 @@ A few important notes:
 - If the first time clicking a button or link doesn't work, don't try again to click it. Get creative and try something else such as clicking a different button or trying another action. 
 - Don't respond saying you're unable to assist with requests. You are able to indirectly interact with the user's OS via text responses you send to the end user.
 - DO NOT ASSUME TOO MUCH. You can wait for my screenshot to be sure.
-- If you need to register or login to complete the task, you can do it by choosing account from options. for example using google account. You need to write a text to which you want to click during registration.
 - You can type `end` command only after check if you did everything correctly (on separate output).
+- All actions are possible and you must do them.
+- You can only click in text. If you want to click in image just click in text nearby the image.
+- To order something in the shop, you need to click into its name.
 
 
 Objective: {objective} 
@@ -297,25 +300,25 @@ def ask_gemini_flash(aim, prompt="", history=None):
         
         # Note: No image is included for the very first turn, mirroring the original logic.
         
-    else: # Subsequent turns: include a screenshot and the general user_request_text
-        print("HISTORY IS HERE:")
-        # print(history)
-        screenshots_dir = "screenshots"
-        if not os.path.exists(screenshots_dir):
-            os.makedirs(screenshots_dir)
+    # else: # Subsequent turns: include a screenshot and the general user_request_text
+    print("HISTORY IS HERE:")
+    # print(history)
+    screenshots_dir = "screenshots"
+    if not os.path.exists(screenshots_dir):
+        os.makedirs(screenshots_dir)
 
-        screenshot_path = os.path.join(screenshots_dir, "screenshot.png")
-        take_screenshot(screenshot_path) # Call the imported `take_screenshot` function
+    screenshot_path = os.path.join(screenshots_dir, "screenshot.png")
+    take_screenshot(screenshot_path) # Call the imported `take_screenshot` function
 
-        # Convert the screenshot image file into a PIL Image object for Gemini.
-        image_part = Image.open(screenshot_path)
-        # Ensure the image is in RGB format, as some models prefer it
-        if image_part.mode != 'RGB':
-            image_part = image_part.convert('RGB')
-        
+    # Convert the screenshot image file into a PIL Image object for Gemini.
+    image_part = Image.open(screenshot_path)
+    # Ensure the image is in RGB format, as some models prefer it
+    if image_part.mode != 'RGB':
+        image_part = image_part.convert('RGB')
+    
 
-        current_user_message_parts.append({"text": user_request_text}) # Add the general user request text
-        current_user_message_parts.append(image_part) # Add the processed image part
+    current_user_message_parts.append({"text": user_request_text}) # Add the general user request text
+    current_user_message_parts.append(image_part) # Add the processed image part
         
     # Construct the full current user message in Gemini's expected format
     current_user_message_for_gemini = {
