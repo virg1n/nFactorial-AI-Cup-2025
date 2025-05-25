@@ -34,6 +34,8 @@ import json
 from pathlib import Path
 import requests
 
+from transformers import BertForSequenceClassification, BertTokenizerFast
+
 from pc_controller import get_user_confirmation, CodeExecutor, CommandHistory
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -60,10 +62,30 @@ ALLOWED_MODULES = {
 
 def main():
     executor = CodeExecutor()
+    tokenizer = BertTokenizerFast.from_pretrained('./model_output/checkpoint-95')
+    model = BertForSequenceClassification.from_pretrained('./model_output/checkpoint-95')
+
+
+    # Example usage: Tokenize and predict
     
     while True:
-        user_input = input("\nEnter mode (OS or pyt): ").strip()
-            
+        user_input = input("\nEnter command: ").strip()
+
+        # Load the tokenizer
+        
+        inputs = tokenizer(user_input, return_tensors="pt", truncation=True, padding=True, max_length=128)
+        outputs = model(**inputs)
+        predictions = int(outputs.logits.argmax(-1))
+        
+
+        if ("--pyt" in user_input):
+            predictions = 1
+
+        # if ("notes" in user_input or "todos" in user_input or "obsidian" in user_input):
+        #     predictions = 1
+        
+        print(predictions)
+        
         if user_input.lower() == 'exit':
             print("Goodbye! 👋")
             break
@@ -71,10 +93,10 @@ def main():
         if not user_input:
             continue
         
-        if user_input.lower() == "os":
+        if predictions == 0:
             done = False
             # aim="Open my main vault in obsidian app"
-            aim = input("\nEnter aim: ").strip()
+            aim = user_input
             add_prompt = ""
             history = []
             while not done:
@@ -124,17 +146,10 @@ def main():
                         done = True
                         break
 
-        elif user_input == "pyt":
+        elif predictions == 1:
             try:
-                user_input = input("\nEnter your command: ").strip()
+                # user_input = input("\nEnter your command: ").strip()
                 
-                if user_input.lower() == 'exit':
-                    print("Goodbye! 👋")
-                    break
-                    
-                if not user_input:
-                    continue
-
                 # Handle special commands
                 if user_input.lower() == 'history':
                     last_commands = executor.history.get_last_n_commands()

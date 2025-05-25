@@ -81,7 +81,7 @@ A few important notes:
 - You can type `end` command only after check if you did everything correctly (on separate output).
 - All actions are possible and you must do them.
 - You can only click in text. If you want to click in image just click in text nearby the image.
-- To order something in the shop, you need to click into its name. You also can find it by search.
+- To order something in the shop, you need to click into its name.
 - If you want to open vault in obsidian app, you need to click to its name.
 
 
@@ -228,7 +228,22 @@ def ask_gpt4o(aim, prompt="", history=[]):
 #     history.append({"role": "assistant", "content": answer})
     
 #     return answer, history
-
+def filter_images(message):
+    """
+    Helper function to filter out image parts from a message.
+    
+    Args:
+        message (dict): A message dictionary with "role" and "parts".
+    
+    Returns:
+        dict or None: A new message dictionary without image parts, or None if no parts remain.
+    """
+    new_parts = [part for part in message["parts"] if not isinstance(part, Image.Image)]
+    if new_parts:
+        return {"role": message["role"], "parts": new_parts}
+    else:
+        return None
+    
 
 import google.generativeai as genai
 
@@ -291,9 +306,9 @@ def ask_gemini_flash(aim, prompt="", history=None):
         # Format the system prompt using the `SYSTEM_PROMPT_FOR_WTEXT` global variable
         initial_system_prompt_formatted = SYSTEM_PROMPT_FOR_WTEXT.format(
             objective=aim,
-            cmd_string="\"ctrl\"",      # As hardcoded in the original SYSTEM_PROMPT usage
-            os_search_str="[\"win\"]",  # As hardcoded in the original SYSTEM_PROMPT usage
-            operating_system="Windows", # As hardcoded in the original SYSTEM_PROMPT usage
+            cmd_string="\"ctrl\"", 
+            os_search_str="[\"win\"]", 
+            operating_system="Windows", 
         )
         
         # Combine the system prompt and the first turn's specific user request.
@@ -342,6 +357,22 @@ def ask_gemini_flash(aim, prompt="", history=None):
         # Extract the model's response content.
         # Gemini's response structure usually involves `candidates[0].content.parts[0].text`.
         answer = response.candidates[0].content.parts[0].text
+        new_history = []
+
+        # Process the history if it's not empty
+        if history:
+            if len(history) <= 3:
+                selected_messages = history
+            else:
+                selected_indices = [0] + list(range(len(history) - 4, len(history)))
+                selected_messages = [history[i] for i in selected_indices]
+            
+            # Filter out images and include only messages with remaining parts
+            new_history = [msg for msg in (filter_images(m) for m in selected_messages) if msg]
+
+        # Update the original history
+        history = new_history
+
     except Exception as e:
         print(f"Error calling Gemini API: {e}")
         # Print more specific error details if available from the API response

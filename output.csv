@@ -2,8 +2,9 @@ text,label
 Open arbuz.kz in Chrome and order chicken.,0
 Open arbuz.kz and order something.,0
 Order chicken from arbuz.kz in google chrome.,0
+Order chicken from kaspi.kz in google.,0
 Open my main vault in the Obsidian app.,0
-"In Google Chrome, open Reddit and go to r/ChatGPT.",0
+In Google Chrome, open Reddit and go to r/ChatGPT.,0
 Open the file explorer and navigate to the Documents folder.,0
 Launch Microsoft Word and create a new document.,0
 Open the settings menu in Chrome and change the homepage.,0
@@ -15,7 +16,7 @@ Open the music player and play a specific song.,0
 Open the photo viewer and browse through images.,0
 Open the video player and play a specific video.,0
 Open the system preferences and change the wallpaper.,0
-"Open the browser and search for ""best restaurants near me.""",0
+Open the browser and search for "best restaurants near me.",0
 Open the terminal and run a specific command.,0
 Open the spreadsheet application and create a new sheet.,0
 Open the presentation software and start a new presentation.,0
@@ -605,3 +606,73 @@ What is the theme of 'Charlotte’s Web'?,2
 Can you suggest a recipe for curry?,2
 What are some methods to enhance patience?,2
 Describe how a canyon is formed.,2
+"Create a new text file 'C:/data/notes.txt' and write 'Hello, World!' to it.",1
+Rename all .jpg files in 'C:/images/' to have a prefix 'photo_'.,1
+Create a zip archive of 'C:/documents/' and save it as 'C:/backup/docs.zip'.,1
+Read 'C:/data/sales.csv' and calculate the total sales for 'Product A'.,1
+Parse 'C:/config/settings.json' and change the 'theme' to 'dark'.,1
+Generate a CSV file 'C:/output/report.csv' with data from a list of dictionaries.,1
+Fetch the current weather for 'New York' from an API and save to 'C:/weather/ny.json'.,1
+Scrape the headlines from 'https://news.example.com' and save to 'C:/scraped/headlines.txt'.,1
+Download the file from 'https://example.com/sample.pdf' and save to 'C:/downloads/sample.pdf'.,1
+Convert 'C:/images/photo.png' to JPEG format and save as 'C:/images/photo.jpg'.,1
+Read 'C:/texts/novel.txt' and count the number of times 'the' appears.,1
+Generate a list of 20 random sentences and save to 'C:/output/sentences.txt'.,1
+Replace all occurrences of 'Mr.' with 'Mister' in 'C:/texts/document.txt'.,1
+Fetch the current CPU usage and save to 'C:/logs/cpu.txt'.,1
+Create a backup of 'C:/projects/' to 'D:/backups/projects_backup.zip'.,1
+Schedule a task to run 'C:/scripts/daily_report.py' every day at 8 AM.,1
+Parse 'C:/data/inventory.xml' and extract the 'name' and 'quantity' of each item.,1
+Generate a bar chart from the data in 'C:/data/sales.csv' and save as 'C:/charts/sales.png'.,1
+Send an email with subject 'Test' and body 'This is a test' to 'test@example.com'.,1
+Read 'C:/logs/error.log' and extract all lines containing 'ERROR' to 'C:/output/errors.txt'.,1
+Create a new directory 'C:/data/archive/' and move all .txt files from 'C:/data/' to it.,1
+Read 'C:/data/prices.csv' and find the highest price in the 'price' column.,1
+Generate a list of 50 random dates in 2024 and save to 'C:/output/dates.txt'.,1
+Convert 'C:/audio/song.mp3' to WAV format and save as 'C:/audio/song.wav'.,1
+Fetch the top 5 trending topics from Twitter and save to 'C:/trends/twitter.txt'.,1
+Scrape the first 10 product names from 'https://store.example.com' and save to 'C:/scraped/products.txt'.,1
+Create a new Excel file 'C:/reports/summary.xlsx' with a sheet 'Data' and write sample data.,1
+Read 'C:/texts/poem.txt' and count the number of lines.,1
+Generate a random password with 12 characters and save to 'C:/output/password.txt'.,1
+Parse 'C:/data/config.yaml' and print the value of 'database.host'.,1
+Fetch the current stock price of 'AAPL' from an API and save to 'C:/stocks/aapl.txt'.,1
+"Read 'C:/data/employees.csv' and sort the rows by 'salary' in descending order, then save.",1
+Generate a pie chart from the data in 'C:/data/budget.csv' and save as 'C:/charts/budget.png'.,1
+Create a new text file 'C:/logs/startup.log' and write the current date and time to it.,1
+Rename all files in 'C:/images/' to lowercase.,1
+Read 'C:/texts/book.txt' and extract all unique words to 'C:/output/unique_words.txt'.,1
+Fetch the latest news headlines from 'https://newsapi.org' and save to 'C:/news/headlines.json'.,1
+Convert 'C:/images/logo.png' to ICO format and save as 'C:/images/logo.ico'.,1
+Generate a list of 100 random numbers between 0 and 1 and save to 'C:/output/random.txt'.,1
+Parse 'C:/data/schedule.json' and print the event names for '2024-05-25'.,1
+Create a new SQLite database 'C:/db/app.db' with a table 'users' and insert sample data.,1
+Read 'C:/data/transactions.csv' and calculate the total amount for each category.,1
+Generate a word cloud from 'C:/texts/speech.txt' and save as 'C:/images/wordcloud.png'.,1
+Fetch the current exchange rate from USD to EUR and save to 'C:/rates/usd_eur.txt'.,1
+Scrape all image URLs from 'https://gallery.example.com' and save to 'C:/scraped/images.txt'.,1
+Create a new text file 'C:/notes/meeting.txt' and write 'Agenda: Discuss project updates' to it.,1
+Read 'C:/logs/access.log' and count the number of unique IP addresses.,1
+Generate a list of 25 random colors in hexadecimal format and save to 'C:/output/colors.txt'.,1
+Convert 'C:/videos/clip.avi' to MP4 format and save as 'C:/videos/clip.mp4'.,1
+Parse 'C:/data/config.ini' and change the value of 'timeout' to 60.,1
+Create a new directory 'C:/temp/processed/' and copy all .csv files from 'C:/data/' to it.,1
+Read 'C:/texts/novel.txt' and find the most frequent word.,1
+Generate a histogram from the data in 'C:/data/scores.csv' and save as 'C:/charts/histogram.png'.,1
+Fetch the current temperature in 'London' from an API and save to 'C:/weather/london.txt'.,1
+Scrape the first 5 blog post titles from 'https://blog.example.com' and save to 'C:/scraped/posts.txt'.,1
+Create a new JSON file 'C:/data/settings.json' with sample configuration data.,1
+Read 'C:/data/inventory.csv' and generate a summary report in 'C:/reports/inventory.txt'.,1
+Generate a random UUID and save to 'C:/output/uuid.txt'.,1
+Parse 'C:/texts/email.txt' and extract the sender's email address.,1
+Fetch the top 3 GitHub repositories for 'python' and save to 'C:/github/top_repos.json'.,1
+Create a new text file 'C:/logs/shutdown.log' and write 'System shutdown at 23:00' to it.,1
+"Read 'C:/data/prices.csv' and plot a line chart of 'price' over 'date', save as 'C:/charts/price_trend.png'.",1
+Generate a list of 15 random email addresses and save to 'C:/output/emails.txt'.,1
+Convert 'C:/images/banner.jpg' to PNG format and save as 'C:/images/banner.png'.,1
+Fetch the current moon phase from an API and save to 'C:/astronomy/moon.txt'.,1
+Scrape the first 10 product prices from 'https://store.example.com' and save to 'C:/scraped/prices.txt'.,1
+Create a new Excel file 'C:/reports/sales.xlsx' with a sheet 'Summary' and write total sales data.,1
+Read 'C:/texts/poem.txt' and count the number of words.,1
+Generate a random 6-digit PIN and save to 'C:/output/pin.txt'.,1
+Parse 'C:/data/config.yaml' and print all keys under 'settings'.,1

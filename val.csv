@@ -1,143 +1,670 @@
-Open the Start menu and pin 'File Explorer' to the taskbar.,0
-Launch Microsoft Word and change the font to 'Arial'.,0
-Open File Explorer and create a new folder 'C:/data/backup/'.,0
-Start Google Chrome and bookmark 'https://www.github.com'.,0
-Open the Task Manager and end the 'Notepad' process.,0
-Launch the Settings app and set the time zone to 'UTC'.,0
-Open Paint and resize the canvas to 800x600 pixels.,0
-Start the Calculator app and calculate '15 * 8'.,0
-Open the Microsoft Store and install 'Notepad++'.,0
-Launch VLC Media Player and play 'C:/videos/intro.mp4'.,0
-Open the Recycle Bin and empty it.,0
-Start the Snipping Tool and save a screenshot to 'C:/screenshots/screen.png'.,0
-Open Windows Defender and scan 'D:/downloads/'.,0
-Launch Slack and send 'Hello!' to the '#general' channel.,0
-Open the Photos app and crop 'C:/pictures/beach.jpg'.,0
-Start PowerPoint and apply the 'Fade' transition to slide 2.,0
-Open the Sound settings and enable 'Spatial sound'.,0
-Launch Epic Games Store and check for free games.,0
-Open the Device Manager and disable 'Bluetooth'.,0
-Start the Camera app and take a photo.,0
-Open Edge and go to 'https://www.bbc.com'.,0
-Launch Outlook and create a new calendar event for tomorrow.,0
-Open the Action Center and turn off 'Focus Assist'.,0
-Start the Xbox app and sign out.,0
-Open File Explorer and copy 'C:/files/data.csv' to 'D:/backup/'.,0
-Launch Chrome and open the 'History' page.,0
-Open the Control Panel and uninstall 'OldApp'.,0
-Start the Maps app and get directions from 'London' to 'Paris'.,0
-Open the Weather app and switch to Celsius.,0
-Launch OneDrive and sync 'C:/documents/'.,0
-Open the Taskbar settings and hide the search bar.,0
-Start the Disk Management tool and shrink 'C:/' by 10GB.,0
-Open Chrome and delete all cookies.,0
-Launch Excel and insert a new column at 'B' in a new sheet.,0
-Open the Keyboard settings and enable 'On-Screen Keyboard'.,0
-Start the Remote Desktop app and save connection settings.,0
-Open the System Tray and turn off 'Wi-Fi'.,0
-Launch Paint and fill the canvas with blue.,0
-Open the Network settings and forget 'HomeWiFi'.,0
-Start the Magnifier and invert colors.,0
-Open File Explorer and sort 'C:/pictures/' by date.,0
-Launch Zoom and mute the microphone.,0
-Open the Printer settings and set 'PrinterX' as default.,0
-Start the Windows Update settings and pause updates.,0
-Open Edge and pin the current tab.,0
-Launch File Explorer and delete 'C:/temp/oldfile.txt'.,0
-Open the Sound Mixer and increase 'System Sounds' to 80%.,0
-Start the Sticky Notes app and delete all notes.,0
-Open Chrome and open the 'Extensions' page.,0
-Launch Word and set the page layout to 'Landscape'.,0
-Merge 'C:/data/orders_jan.csv' and 'C:/data/orders_feb.csv' into 'C:/data/orders_q1.csv'.,1
-Convert 'C:/files/settings.json' to YAML and save as 'C:/files/settings.yaml'.,1
-Read 'C:/logs/server.log' and count lines with 'ERROR'.,1
-Download 'https://example.com/sample.txt' and save as 'C:/downloads/sample.txt'.,1
-Generate 50 random integers between 1 and 100 and save to 'C:/data/numbers.txt'.,1
-Scrape titles from 'https://blog.example.com' and save to 'C:/scraped/titles.txt'.,1
-Create a directory 'C:/temp/logs/' if it doesn’t exist.,1
-Rename 'C:/videos/clip.mp4' to 'C:/videos/clip_2024.mp4'.,1
-Fetch the current time from an API and save to 'C:/time/now.txt'.,1
-Extract all URLs from 'C:/data/links.txt' and save to 'C:/output/urls.txt'.,1
-\Parse 'C:/config/server.ini' and print the value of 'port'.,1
-Fetch 5 random quotes from 'https://api.quotable.io/random' and save to 'C:/quotes/quotes.json'.,1
-Read 'C:/api/data.json' and print the 'error' field.,1
-Compress 'C:/files/docs/' into 'C:/files/docs.zip'.,1
-Generate a QR code for 'https://example.com' and save as 'C:/codes/qr.png'.,1
-Calculate 7 factorial and print it.,1
-Send an email to 'report@example.com' with subject 'Daily Report' using SMTP.,1
-Parse 'C:/logs/app.log' and count '404' errors.,1
-Generate a bar plot from 'C:/data/sales.csv' column 'revenue' and save as 'C:/charts/revenue.png'.,1
-Read 'C:/data/expenses.csv' and sum the 'cost' column.,1
-Download 'https://example.com/icon.ico' and save to 'C:/images/icon.ico'.,1
-Append 'Task completed' to 'C:/logs/status.log'.,1
-Encrypt 'Confidential' with key 'key456' and save to 'C:/secure/conf.txt'.,1
-Decode the base64 string 'VGVzdGluZw==' and save to 'C:/output/test.txt'.,1
-Generate a character count from 'C:/texts/book.txt' and save to 'C:/output/count.csv'.,1
-Parse 'C:/data/feed.xml' and list all 'item' elements.,1
-Query 'C:/db/users.db' and fetch all rows from the 'accounts' table.,1
-Fetch the latest commit from 'https://api.github.com/repos/user/repo/commits' and save to 'C:/git/commit.txt'.,1
-Generate a line chart from 'C:/data/prices.csv' column 'price' and save as 'C:/charts/price.png'.,1
-Scrape all links from 'https://store.example.com' and save to 'C:/scraped/links.txt'.,1
-Convert 'C:/images/photo.jpg' to grayscale and save as 'C:/images/gray.jpg'.,1
-Generate a 16-character random password and save to 'C:/output/pass.txt'.,1
-Read 'C:/logs/errors.log' and extract lines with 'FAIL' to 'C:/output/fail.txt'.,1
-Backup 'C:/files/images/' to 'C:/backups/images_2024.zip'.,1
-Send a GET request to 'https://api.example.com/status' and save to 'C:/api/status.json'.,1
-Parse 'C:/data/grades.csv' and find the row with the lowest 'score'.,1
-Generate a pie chart from 'C:/data/time.csv' column 'hours' and save as 'C:/charts/time.png'.,1
-Read 'C:/texts/essay.txt' and count sentences.,1
-Download all images from 'https://photos.example.com' and save to 'C:/downloads/photos/'.,1
-"Create 'C:/db/sales.db' with table 'orders' and insert ['2024-02-01', 150].",1
-Convert 'C:/docs/note.md' to 'C:/docs/note.pdf'.,1
-Generate a random float between 0 and 10 and print it.,1
-Read 'C:/data/posts.json' and extract all 'id' values to 'C:/output/post_ids.txt'.,1
-Calculate the cube of 5 and save to 'C:/results/cube.txt'.,1
-What is the deepest lake in the world?,2
-Explain how a rainbow is formed.,2
-Write a haiku about the ocean.,2
-What are the health benefits of yoga?,2
-How does a hard drive store data?,2
-Tell me about the construction of the Eiffel Tower.,2
-What is the difference between a comet and an asteroid?,2
-Can you summarize the plot of 'Pride and Prejudice'?,2
-What are some tips for staying motivated?,2
-Describe how a volcano erupts.,2
-What is the longest river in the world?,2
-Explain quantum mechanics in simple terms.,2
-Write a short story about a lost astronaut.,2
-What are the disadvantages of solar energy?,2
-How does the human body digest food?,2
-Tell me about the development of the steam engine.,2
-What is the main theme of '1984' by George Orwell?,2
-Can you provide a recipe for homemade pizza?,2
-What are some strategies for learning math?,2
-Describe the migration of monarch butterflies.,2
-What is the largest desert in the world?,2
-Explain how a firewall protects a network.,2
-Write a poem about a forest.,2
-What are the drawbacks of recycling?,2
-How does an electric car charge?,2
-Tell me about the life of Leonardo da Vinci.,2
-What is the storyline of 'Inception'?,2
-Can you list ingredients for a pasta salad?,2
-What are some ways to reduce stress?,2
-Describe how clouds form.,2
-What is the oldest city in the world?,2
-Explain what a black hole is.,2
-Write a limerick about a bird.,2
-What are the cons of hydroelectric power?,2
-How does the human ear hear sound?,2
-Tell me about the Wright brothers' first flight.,2
-What is the lesson of 'The Little Prince'?,2
-Can you suggest a recipe for banana bread?,2
-What are some methods to boost productivity?,2
+text,label
 Describe how tides are influenced by the moon.,2
-What is the slowest animal on Earth?,2
-Explain how a refrigerator works.,2
+Convert 'C:/audio/song.mp3' to 'C:/audio/song.wav'.,1
+Write new todo for my obsidian vault: create app.,1
+Write a poem about a river.,2
+Explain how a compass works.,2
+Open the command prompt and run a batch script.,0
+Generate a 10-character random string and save to 'C:/output/key.txt'.,1
+Create new todo: buy a dog.,1
+Create new note in obsidian: I love you.,1
+Describe the migration of monarch butterflies.,2
+Launch File Explorer and delete 'C:/temp/junk.txt'.,0
+Open the password manager and retrieve a password.,0
+Read 'C:/api/status.json' and print the 'error_code' field.,1
+Open the device manager and check for hardware issues.,0
 Write a dialogue between a teacher and a student.,2
-What are the advantages of reading books?,2
-How does a wind turbine generate power?,2
+List all my notes.,1
+What is the main idea of 'Moby Dick'?,2
+What is the deepest ocean on Earth?,2
+List all my notes in obsidian.,1
+List all my todos.,1
+Rename 'C:/images/pic.jpg' to 'C:/images/photo_2023.jpg'.,1
+Read 'C:/texts/manual.txt' and find the longest line.,1
+Read 'C:/data/news.xml' and extract all 'title' tags to 'C:/output/titles.txt'.,1
+Convert 'C:/audio/track.wav' to 'C:/audio/track.mp3'.,1
+Can you provide a recipe for lasagna?,2
+Create a line chart from 'C:/data/temps.csv' column 'temp' and save as 'C:/charts/temp.png'.,1
+Open the network settings and configure a VPN.,0
+What are the health benefits of yoga?,2
+Write a limerick about a dog.,2
+List all my todos in obsidian.,1
+Open the Game Bar and take a screenshot.,0
+Tell me about the history of the pyramids in Egypt.,2
+Open the blog app and write a post.,0
+List all my files in obsidian.,1
+Read 'C:/data/ranks.csv' and find the row with the highest 'score'.,1
+Open the dictionary app and look up a word.,0
+List all files in current directory.,1
+Launch Word and add a header 'Confidential' to a new document.,0
+Launch File Explorer and select all files in 'C:/temp/'.,0
+Open the Mouse settings and enable 'Scroll inactive windows'.,0
+Tell me about the life of Cleopatra.,2
+Send a POST request to 'https://api.example.com/data' with {'id': 1} and save to 'C:/api/response.json'.,1
+Fetch user data from 'https://api.example.com/users/1' and save to 'C:/api/user1.json'.,1
+Download 'https://example.com/data.csv' and save to 'C:/data/external.csv'.,1
+Open the Control Panel and navigate to 'Hardware and Sound'.,0
+Write 'Task completed at 10:00' to 'C:/logs/status.txt'.,1
+Open the stylus settings and calibrate the pen.,0
+Send a GET request to 'https://api.example.com/info' and save to 'C:/api/info.json'.,1
+Send a POST request to 'https://api.example.com/submit' with {'id': 1} and save to 'C:/api/response.json'.,1
+Open the event viewer and look for errors.,0
+Launch Microsoft Word and create a new document.,0
+How does a dishwasher clean dishes?,2
+Can you provide steps to make sushi?,2
+What is the tallest mountain in the world?,2
+Open the AR app and start an augmented reality experience.,0
+Open the printer settings and add a new printer.,0
+What is the longest river in the world?,2
+Start the Magnifier and zoom in by 200%.,0
+Launch Slack and open the 'General' channel.,0
+Launch Excel and add a comment to cell A1.,0
+Open the Action Center and enable 'Focus Assist'.,0
+Start the Windows Update settings and rollback the last update.,0
+Write a poem about a starry night.,2
+Convert 'C:/docs/guide.pdf' to 'C:/docs/guide.txt'.,1
+What is the smallest country in the world?,2
+"Calculate the average of [10, 20, 30, 40, 50] and save it to 'C:/results/avg.txt'.",1
+Parse 'C:/texts/report.txt' and count lines longer than 50 characters.,1
+Open the puzzle app and solve a puzzle.,0
+Open the VPN app and connect to a specific location.,0
+Describe how snowflakes form.,2
+What is the deepest ocean on Earth?,2
+Decode the base64 string 'SGVsbG8=' and save to 'C:/output/decoded.txt'.,1
+Open the sound settings and adjust the volume.,0
+Read 'C:/logs/debug.log' and extract lines with 'INFO' to 'C:/output/info.txt'.,1
+Open the settings and change the default browser.,0
+Parse 'C:/logs/system.log' and extract all lines after '2023-10-01'.,1
+Read 'C:/data/sales.csv' and compute the total of the 'price' column.,1
+Open the Recycle Bin and empty it.,0
+Describe how a hurricane forms.,2
+List all files in current directory.,1
+What are some tips for staying focused?,2
+Parse 'C:/logs/error.log' and count unique error codes.,1
+Create a pie chart from 'C:/data/votes.csv' column 'option' and save as 'C:/charts/votes.png'.,1
+Open the email client and archive old emails.,0
+What are the benefits of drinking water?,2
+Describe how clouds form.,2
+Delete random file in current directory.,1
+Read 'C:/data/budget.xlsx' and sum the 'cost' column.,1
+Open the webcam app and take a photo.,0
+Delete random file in obsidian vault.,1
+Write the current date to 'C:/logs/date.txt'.,1
+"Generate a bar chart from {'A': 5, 'B': 10, 'C': 15} and save as 'C:/charts/bar.png'.",1
+Open the User Accounts settings and create a new user 'Guest'.,0
+How does the human heart pump blood?,2
+Open the Mouse Properties and swap the primary button.,0
+How does a refrigerator keep food cold?,2
+Open the video player and play a specific video.,0
+What is the plot of 'The Lord of the Rings'?,2
+Open the contacts app and add a new contact.,0
+Open the Start menu and click on 'Settings'.,0
+Send an email to 'test@example.com' with subject 'Test' using an SMTP server.,1
+Generate a list of odd numbers from 1 to 99 and save to 'C:/output/odds.txt'.,1
+Parse 'C:/logs/access.log' and count lines containing '404'.,1
+Open the screen recorder and start recording.,0
+What are the benefits of reading books?,2
+Open the Taskbar settings and hide the taskbar in desktop mode.,0
+Can you list steps to make lemonade?,2
+Describe how a canyon is formed.,2
+Create new file in current directory: hello.txt,1
+What are some methods to enhance patience?,2
+Open the brain teaser app and think of a solution.,0
+What is the largest desert in the world?,2
+Generate a list of 20 random words from a dictionary and save to 'C:/output/words.txt'.,1
+Parse 'C:/data/config.ini' and print the value of 'timeout'.,1
+Generate a QR code for 'https://mywebsite.com' and save as 'C:/codes/qr.png'.,1
+Start the Xbox app and launch 'Game Pass'.,0
+Open the Sound settings and enable 'Enhance audio'.,0
+Backup 'C:/files/docs/' to 'C:/backups/docs_2023.zip'.,1
+What is the main theme of 'Romeo and Juliet'?,2
+What are the benefits of recycling?,2
+Create new file in this directory: file.txt,1
+What are some ways to improve communication skills?,2
+Parse 'C:/texts/email.txt' and extract the sender’s address.,1
+Can you provide a recipe for apple pie?,2
+Rename 'C:/images/pic1.jpg' to 'C:/images/photo_001.jpg'.,1
+What are the advantages of public transportation?,2
+Describe the migration of monarch butterflies.,2
+What are some strategies for saving money?,2
+What is the theme of 'Charlotte’s Web'?,2
+What is the largest forest in the world?,2
+What are the benefits of walking daily?,2
+Describe the formation of fossils.,2
+Describe how a geyser erupts.,2
+Create new file in obsidian: dreams.md,1
+What is the plot of 'The Lord of the Rings'?,2
+Generate a histogram from 'C:/data/values.csv' column 'scores' and save as 'C:/charts/hist.png'.,1
+Tell me about the Wright brothers’ first flight.,2
+Open the update settings and check for updates.,0
+Fetch the latest news from 'https://newsapi.org/v2/top-headlines' and save to 'C:/news/headlines.json'.,1
+What is the message of 'Animal Farm'?,2
+Convert 'C:/docs/page.html' to 'C:/docs/page.txt'.,1
+Generate a list of even numbers up to 20 and save to 'C:/output/evens.txt'.,1
+Open the firewall settings and allow a specific application.,0
+Open Firefox and open the 'Bookmarks' menu.,0
+Create new file in obsidian: goals.md,1
+Open the meditation app and begin a session.,0
+Explain what a black hole is.,2
+Write a haiku about a forest.,2
+Create new file in obsidian: lessons.md,1
+Download all PDFs from 'https://docs.example.com' and save to 'C:/downloads/docs/'.,1
+How does a wind turbine generate electricity?,2
+"Create 'C:/reports/data.xlsx' with sheet 'Results' and values [[1, 'X'], [2, 'Y']].",1
+"Read 'C:/data/items.json' and sort by 'id', then save.",1
+Generate a histogram from 'C:/data/heights.csv' column 'height' and save as 'C:/charts/hist.png'.,1
+Create a bar chart from 'C:/data/traffic.csv' column 'hour' and save as 'C:/charts/traffic.png'.,1
+Fetch the exchange rate from 'https://api.exchangerate-api.com/v4/latest/USD' and save to 'C:/rates/rates.json'.,1
+Convert 'C:/images/photo.png' to 'C:/images/photo.jpg'.,1
+Parse 'C:/config/settings.xml' and print the value of the 'mode' tag.,1
+Read 'C:/data/clients.json' and count entries with 'active': true.,1
+Open the display settings and change the resolution.,0
+Open the fitness app and start a new routine.,0
+Delete all files in obsidian,1
+Fetch the time from 'https://worldtimeapi.org/api/timezone/UTC' and save to 'C:/time/utc.txt'.,1
+Generate a list of 30 random times in 2024 and save to 'C:/output/times.txt'.,1
+What is the smallest continent in the world?,2
+What are some habits for a healthy lifestyle?,2
+Tell me about the invention of the telephone.,2
+Create a pie chart from 'C:/data/survey.csv' column 'vote' and save as 'C:/charts/vote.png'.,1
+Open the VR headset settings and adjust the display.,0
+Open the streaming app and watch a show.,0
+What is the largest desert in the world?,2
+Delete all files in current dir,1
+Open Edge and enable 'Dark mode'.,0
+Explain how a light bulb works.,2
+Open the video conferencing app and join a meeting.,0
+Launch OneNote and add a note 'Meeting at 3 PM'.,0
+Open the Task Manager and restart 'Windows Explorer'.,0
+Read 'C:/data/bills.csv' and calculate the total 'amount'.,1
+Launch Excel and merge cells A1 and B1 in a new sheet.,0
+Open the Disk Management tool and shrink 'C:/' by 10 GB.,0
+Generate a character count from 'C:/texts/story.txt' and save to 'C:/output/counts.csv'.,1
+Download the file from 'https://example.com/file.txt' and save as 'C:/downloads/file.txt'.,1
+Open the poll app and vote on an option.,0
+Open the trivia app and answer questions.,0
+What is the theme of 'Pride and Prejudice'?,2
+Create new files in new directory,1
+Fetch the latest news from 'https://api.newsapi.org/v2/top-headlines' and save to 'C:/news/headlines.json'.,1
+What are some ways to improve memory?,2
+Tell me about the construction of the Statue of Liberty.,2
+Open the Notification settings and enable 'Do Not Disturb'.,0
+Tell me about the construction of the Statue of Liberty.,2
+Tell me about the life of Albert Einstein.,2
+Open Edge and export bookmarks to 'C:/backup/bookmarks.html'.,0
+Scrape image URLs from 'https://gallery.example.com' and save to 'C:/scraped/images.txt'.,1
+Open Firefox and open the 'Extensions' page.,0
+How does the human ear hear sound?,2
+Open the terminal and run a specific command.,0
+Start PowerPoint and add a slide with the title 'Weekly Report'.,0
+Generate a pie chart from 'C:/data/expenses.csv' column 'category' and save as 'C:/charts/expenses.png'.,1
+Create a stacked bar chart from 'C:/data/profits.csv' columns 'month' and 'product' and save as 'C:/charts/profits.png'.,1
+Launch Word and insert a page break in a new document.,0
+Start Microsoft Word and create a new blank document.,0
+Create 'C:/data/notes.txt' with 'Meeting at 3 PM'.,1
+Open Notepad and type 'Test Document' then save as 'test.txt' on the desktop.,0
+Read 'C:/texts/speech.txt' and count sentences ending with '.'.,1
+Create a bar chart from 'C:/data/monthly.csv' column 'sales' and save as 'C:/charts/sales.png'.,1
+Download 'https://example.com/video.mp4' and save to 'C:/videos/video.mp4'.,1
+Read 'C:/texts/novel.txt' and count total characters.,1
+Write a story about a friendly dragon.,2
+Can you provide a recipe for brownies?,2
+"Create 'C:/reports/q1.xlsx' with a sheet 'Summary' and data [[1, 'A'], [2, 'B']].",1
+Describe how a star is born.,2
+Describe the process of digestion.,2
+Generate a list of square numbers up to 100 and save to 'C:/output/squares.txt'.,1
+Open the task manager and end a specific process.,0
+Open the health app and log a workout.,0
+Parse 'C:/data/feed.xml' and list all 'item' elements.,1
+Open the survey app and complete a questionnaire.,0
+Tell me about the history of the pyramids in Egypt.,2
+What is the hottest planet in our solar system?,2
+Fetch the humidity for 'Sydney' from an API and save to 'C:/weather/sydney.txt'.,1
+Tell me about the life of Cleopatra.,2
+Write a short story about a lost astronaut.,2
+Create a directory 'C:/backups/2023/' if it doesn’t exist.,1
+"Create 'C:/data/schedule.csv' with headers 'Time', 'Event' and rows: ['9:00', 'Meeting'], ['10:00', 'Break'].",1
+Read 'C:/api/data.json' and print the 'name' field.,1
+Open the eBook reader and open a specific book.,0
+What are the advantages of solar energy?,2
+Can you provide steps to make sushi?,2
+Open the remote desktop app and connect to a server.,0
+"Generate a histogram from [1, 2, 2, 3, 3, 3] and save as 'C:/charts/hist2.png'.",1
+Launch Adobe Acrobat and open 'C:/documents/sample.pdf'.,0
+What are the benefits of learning math?,2
+Merge 'C:/data/file1.csv' and 'C:/data/file2.csv' into 'C:/data/merged.csv'.,1
+Encrypt 'Sensitive data' with a key 'mykey123' and save to 'C:/secure/encrypted.txt'.,1
+Open the stocks app and check the market.,0
+What is the main theme of 'Romeo and Juliet'?,2
+Can you list ingredients for a fruit salad?,2
+How does a battery store energy?,2
+How does a computer process binary code?,2
+Write a poem about the moon.,2
+Generate a random float between 0 and 1 and print it.,1
+Generate a list of 12 random words and save to 'C:/output/words.txt'.,1
+"Read 'C:/texts/poem.txt' and replace 'love' with 'hope', then save.",1
+Open the translation app and translate a phrase.,0
+Read 'C:/data/trades.csv' and calculate the average 'value'.,1
+"Read 'C:/logs/server.log' and extract all timestamps, saving to 'C:/output/times.txt'.",1
+Start the Photos app and delete 'C:/pictures/oldpic.jpg'.,0
+Tell me about the invention of the wheel.,2
+"Read 'C:/data/config.json' and set 'mode' to 'light', then save.",1
+Can you list steps to make a sandwich?,2
+Write a haiku about a forest.,2
+Read 'C:/data/expenses.csv' and find the highest 'amount'.,1
+Tell me about the life of Isaac Newton.,2
+Parse 'C:/data/inventory.csv' and find the row with the lowest 'stock' value.,1
+Calculate the cube of 7 and save to 'C:/results/cube.txt'.,1
+Open the Bluetooth settings and remove 'Old Device'.,0
+Open the file explorer and navigate to the Documents folder.,0
+"Create 'C:/data/students.csv' with headers 'Name', 'Grade' and rows: ['Alice', 85], ['Bob', 90].",1
+Open the system preferences and change the wallpaper.,0
+Launch Edge and clear cookies.,0
+Start the Disk Cleanup tool and clean temporary files on 'C:/'.,0
+What is the coldest place on Earth?,2
+Describe the process of evaporation.,2
+Extract all URLs from 'C:/data/links.txt' and save to 'C:/output/urls.txt'.,1
+Send an email to 'user@example.com' with subject 'Alert' and body 'Check system' via SMTP.,1
+What are some tips for learning to play guitar?,2
+How does the human ear hear sound?,2
+Explain how a rainbow is formed.,2
+Open the code editor and create a new Python file.,0
+Open the Sound settings and disable 'Spatial sound'.,0
+What are the pros of wind energy?,2
+Explain the concept of quantum mechanics simply.,2
+Convert 'C:/docs/readme.md' to 'C:/docs/readme.html'.,1
+Open the authenticator app and generate a code.,0
+Generate 50 random integers between 10 and 100 and save to 'C:/data/numbers.txt'.,1
+Open arbuz.kz in Chrome and order chicken.,0
+Explain how a clock keeps time.,2
+Parse 'C:/logs/network.log' and count unique MAC addresses.,1
+What are the benefits of recycling?,2
+Launch Paint and fill the canvas with blue.,0
+Generate a list of 20 random RGB colors and save to 'C:/output/rgb.txt'.,1
+Describe the life cycle of a plant.,2
+Open the Printer settings and print a test page.,0
+What are the health benefits of yoga?,2
+Open File Explorer and navigate to 'C:/Users/Public/'.,0
+Fetch weather data for 'London' from an API and save to 'C:/weather/london.json'.,1
+Tell me about the invention of the airplane.,2
+"In Google Chrome, open Reddit and go to r/ChatGPT.",0
+Open Firefox and clear the browsing history.,0
+Explain what a black hole is.,2
+Explain how a camera takes pictures.,2
+Generate a heatmap from 'C:/data/matrix.csv' and save as 'C:/charts/heat.png'.,1
+Explain the greenhouse effect.,2
+Generate a word cloud from 'C:/texts/book.txt' and save as 'C:/images/cloud.png'.,1
+Open the news app and read the latest headlines.,0
+"Calculate the product of [2, 4, 6, 8] and save to 'C:/results/prod.txt'.",1
+Tell me about the history of the Mona Lisa.,2
+Open the settings menu in Chrome and change the homepage.,0
+What is the largest animal on Earth?,2
+Generate a heatmap from 'C:/data/matrix.csv' and save as 'C:/charts/heatmap.png'.,1
+Write a short story about a pirate adventure.,2
+Describe how a volcano erupts.,2
+Explain how a light bulb works.,2
+What are the benefits of teamwork?,2
+Open Firefox and open a new private window.,0
+Open Windows Security and run a full scan.,0
+Open the Photos app and rotate 'C:/pictures/beach.jpg' 90 degrees.,0
+"Generate a 3D bar plot from 'C:/data/values.csv' columns 'x', 'y', 'z' and save as 'C:/charts/3dbar.png'.",1
+Open the weather app and check the forecast.,0
+Convert 'C:/images/icon.png' to 'C:/images/icon.ico'.,1
+Open the user accounts and create a new user.,0
+What is the theme of 'The Catcher in the Rye'?,2
+Start the Windows Defender settings and exclude 'C:/games/'.,0
+Open the encyclopedia app and read an article.,0
+Write a poem about the moon.,2
+Open the spreadsheet application and create a new sheet.,0
+Start the Sticky Notes app and delete all notes.,0
+What are the pros of wind energy?,2
+Tell me about the invention of the telephone.,2
+Open the Sound Mixer and increase 'System Sounds' volume.,0
+Parse 'C:/texts/page.html' and extract all paragraphs to 'C:/output/paragraphs.txt'.,1
+Read 'C:/data/posts.json' and extract all 'author' values to 'C:/output/authors.txt'.,1
+"Read 'C:/data/employees.json' and sort by 'salary', then save.",1
+"Create 'C:/data/info.json' with {'name': 'Alex', 'age': 30}.",1
+What is the largest mammal in the world?,2
+"Create 'C:/data/log.md' with '# Log
+- System checked'.",1
+What is the message of 'Animal Farm'?,2
+What is the largest animal on Earth?,2
+What are some techniques for stress relief?,2
+Open Firefox and open the 'Developer Tools'.,0
+Scrape all headers from 'https://news.example.com' and save to 'C:/scraped/headers.txt'.,1
+Can you suggest a recipe for spaghetti?,2
+Open Firefox and go to 'https://www.bbc.com'.,0
+Open the screenshot tool and capture the screen.,0
+Download the file from 'https://sample.com/pic.jpg' and save it as 'C:/downloads/pic.jpg'.,1
+Explain how a radio transmits sound.,2
+Write a story about a magical tree.,2
+Can you suggest a recipe for curry?,2
+Download 'https://example.com/report.doc' and save to 'C:/docs/report.doc'.,1
+Generate a list of squares from 1 to 10 and save to 'C:/output/squares.txt'.,1
+Generate a scatter plot from 'C:/data/points.csv' columns 'x' and 'y' and save as 'C:/charts/scatter.png'.,1
+How does a microwave cook food?,2
+"Create 'C:/db/sales.db' with table 'transactions' and insert ['2023-01-01', 150].",1
+How does the human lung exchange oxygen?,2
+What are the advantages of public transportation?,2
+Open File Explorer and sort 'C:/downloads/' by size.,0
+Tell me about the Wright brothers’ first flight.,2
+Open the riddle app and guess the answer.,0
+Start the Calculator app and calculate '15 + 27'.,0
+Write a limerick about a dog.,2
+Launch Teams and pin the 'Project Team' chat.,0
+Scrape all paragraph texts from 'https://blog.example.com' and save to 'C:/scraped/text.txt'.,1
+Open the cartoon app and watch an animation.,0
+Write a haiku about rain.,2
+Open Firefox and open the 'Preferences' page.,0
+What are the advantages of solar energy?,2
+What are some ways to stay motivated?,2
+Create a line chart from 'C:/data/rates.csv' column 'rate' and save as 'C:/charts/rates.png'.,1
+"Create 'C:/data/logins.csv' with headers 'User', 'Time' and row ['alice', '2023-10-01'].",1
+"Generate a pie chart from {'Yes': 60, 'No': 40} and save as 'C:/charts/pie.png'.",1
+How does the human skin heal cuts?,2
+Explain the concept of quantum mechanics simply.,2
+What are some tips for learning to play guitar?,2
+"Read 'C:/data/users.csv' and sort by 'age', then save.",1
 Tell me about the discovery of electricity.,2
+Open the Accessibility settings and turn on 'High Contrast'.,0
+What is the story of 'The Lion King'?,2
+How does a battery store energy?,2
+How does a car engine operate?,2
+Open the Microsoft Store and search for 'Notion'.,0
+What is the largest lake in the world?,2
+Launch Epic Games Launcher and check for updates.,0
+Launch File Explorer and open 'C:/users/admin/downloads/'.,0
+Tell me about the history of democracy.,2
+Open the security settings and enable two-factor authentication.,0
+Open the browser and navigate to a specific bookmark.,0
+Convert 'C:/images/picture.jpg' to grayscale and save as 'C:/images/gray.jpg'.,1
+"Read 'C:/data/profiles.json' and remove the 'email' field, then save.",1
+Backup 'C:/project/code/' to 'C:/backups/code.tar.gz'.,1
+What are some ways to build resilience?,2
+Open the Taskbar settings and align icons to the center.,0
+Open the audiobook app and resume listening.,0
+Open the wiki app and search for a topic.,0
+What is the main idea of 'The Giver'?,2
+Generate a line plot from 'C:/data/sales.csv' column 'revenue' and save as 'C:/charts/revenue.png'.,1
+Launch Outlook and mark all emails as read.,0
+Open the System Tray and adjust the brightness to 75%.,0
+What is the plot of 'Harry Potter and the Sorcerer’s Stone'?,2
+"Read 'C:/texts/letter.txt' and replace 'Dear' with 'Hello', then save.",1
+Fetch 5 random quotes from 'https://api.quotable.io/quotes' and save to 'C:/quotes/quotes.json'.,1
+Can you suggest a recipe for tomato soup?,2
+Explain how a rainbow is formed.,2
+Backup 'C:/files/docs/' to 'C:/backups/docs_2023.zip'.,1
+Generate a list of even numbers from 0 to 20 and save to 'C:/output/evens.txt'.,1
+Start the Windows Sandbox and open 'notepad.exe'.,0
+"Read 'C:/config/user.json' and change 'role' to 'admin', then save.",1
+Parse 'C:/data/feed.xml' and list all 'title' elements.,1
+Launch Paint and resize 'C:/images/picture.jpg' to 50%.,0
+Start the Maps app and search for 'London'.,0
+Generate a box plot from 'C:/data/scores.csv' column 'points' and save as 'C:/charts/box.png'.,1
+Explain how a mirror reflects light.,2
+Generate a scatter plot from 'C:/data/points.csv' columns 'x' and 'y' and save as 'C:/charts/points.png'.,1
+Read 'C:/logs/server.log' and count lines with 'ERROR'.,1
+Open the messaging app and send a message.,0
+Open the language settings and add a new keyboard layout.,0
+Open the review app and rate a product.,0
+Launch Word and change the font to 'Arial' in a new document.,0
+Backup 'C:/project/code/' to 'C:/backups/code.tar.gz'.,1
+What is the oldest city in the world?,2
+Launch PowerShell and run 'Get-Date'.,0
+What is the tallest mountain in the world?,2
+Convert 'C:/images/color.jpg' to grayscale and save as 'C:/images/gray.jpg'.,1
+Open the registry editor and modify a specific key.,0
+Open the Task Manager and view the 'Processes' tab.,0
+Open the power options and set the computer to sleep after a certain time.,0
+Open the image editor and apply a filter to an image.,0
+"Open the browser and search for ""best restaurants near me.""",0
+Read 'C:/data/tickets.json' and count tickets with 'status': 'open'.,1
+Open the game launcher and start a game.,0
+"Create a scatter plot from {'x': [1, 2, 3], 'y': [4, 5, 6]} and save as 'C:/charts/simple.png'.",1
+Open Windows Security and view 'Virus & Threat Protection' history.,0
+"Generate a 3D bar chart from 'C:/data/3d.csv' columns 'x', 'y', 'z' and save as 'C:/charts/3dbar.png'.",1
+Open the clipboard manager and paste a specific item.,0
+What is the driest place on Earth?,2
+Write a short story about a lost astronaut.,2
+Start the Snipping Tool and capture a region of the screen.,0
+What is the difference between a comet and an asteroid?,2
+Can you suggest a recipe for pumpkin pie?,2
+Open the keyboard settings and change the layout.,0
+Start the Windows Mobility Center and mute the sound.,0
+Start the Windows Fax and Scan app and save a scan as 'scan.jpg'.,0
+What is the story of 'The Hobbit'?,2
+Read 'C:/texts/log.txt' and count occurrences of the word 'error'.,1
+What is the difference between a comet and an asteroid?,2
+Extract all URLs from 'C:/data/webpage.html' and save to 'C:/output/links.txt'.,1
+Open the quiz app and take a test.,0
+Open the joke app and read a joke.,0
+Start the Camera app and take a photo.,0
+"Generate a bar chart from {'Red': 5, 'Blue': 8, 'Green': 3} and save as 'C:/charts/colors.png'.",1
+Describe the life cycle of a frog.,2
+Open the thesaurus app and find synonyms.,0
+How does the human heart pump blood?,2
+Write a story about a talking bird.,2
+Explain how Wi-Fi works.,2
+Read 'C:/texts/essay.txt' and count sentences.,1
+Fetch the stock price of 'GOOGL' from an API and save to 'C:/stocks/googl.txt'.,1
+Start the Event Viewer and view 'System' logs.,0
+Launch Paint 3D and draw a green square.,0
+Fetch the current gold price from 'https://api.example.com/gold' and save to 'C:/market/gold.json'.,1
+Open the touchpad settings and enable gestures.,0
+Read 'C:/data/reviews.csv' and filter rows where 'rating' > 4.,1
+Open the video editor and trim a video clip.,0
+Write a haiku about snow.,2
+Open the disk management tool and format a drive.,0
+What are the advantages of eating vegetables?,2
+Convert 'C:/files/data.xml' to JSON and save as 'C:/files/data.json'.,1
+Compress 'C:/backup/weekly/' into 'C:/backup/weekly.zip'.,1
+What are the advantages of biking?,2
+Encrypt 'Confidential' with key 'secret' and save to 'C:/secure/data.txt'.,1
+Launch the Settings app and go to 'Network & Internet'.,0
+Parse 'C:/logs/traffic.log' and extract all requests from '10.0.0.1'.,1
+Can you provide a recipe for apple pie?,2
+Explain how Wi-Fi works.,2
+Open the Sound settings and adjust the volume to 50%.,0
+Explain how a thermometer measures temperature.,2
+What are some methods to improve teamwork?,2
+Open the comic app and read a comic strip.,0
+Start the Resource Monitor and check 'Memory' usage.,0
+Generate a box plot from 'C:/data/scores.csv' column 'points' and save as 'C:/charts/box.png'.,1
+Open the notes app and create a new note.,0
+Launch Teams and leave the 'Old Project' team.,0
+"Create 'C:/data/tasks.json' with {'task1': 'done', 'task2': 'pending'}.",1
+Open the presentation software and start a new presentation.,0
+Download 'https://example.com/video.mp4' and save to 'C:/videos/video.mp4'.,1
+Open the Display settings and adjust scaling to 125%.,0
+Open File Explorer and filter 'C:/documents/' for '*.docx'.,0
+Describe how a volcano erupts.,2
+Fetch the latest tag from 'https://api.github.com/repos/user/repo/tags' and save to 'C:/git/tag.txt'.,1
+What are some ways to boost creativity?,2
+"Create 'C:/data/students.csv' with headers 'ID', 'Name', 'Grade' and rows: [1, 'John', 85], [2, 'Emma', 92].",1
+Open the forum app and post a question.,0
+Launch Outlook and create a new folder 'Work Emails'.,0
+Open the calendar app and create a new event.,0
+Open File Explorer and extract 'C:/downloads/archive.zip'.,0
+Open the Device Manager and expand 'Display adapters'.,0
+What is the plot of 'The Hunger Games'?,2
+Can you list ingredients for a Caesar salad?,2
+How does a plane fly?,2
+Create 'C:/logs/startup.log' with 'System booted at 07:00'.,1
+Zip the folder 'C:/project/docs/' into 'C:/backups/docs.zip'.,1
+"Generate a line chart from [(1, 2), (2, 4), (3, 6)] and save as 'C:/charts/line.png'.",1
+Read 'C:/texts/book.txt' and count the number of chapters.,1
+Start the Windows Update settings and install available updates.,0
+Read 'C:/data/orders.csv' and sum the 'total' column.,1
+Fetch the current time in 'London' from an API and save to 'C:/time/london.txt'.,1
+What is the longest river in the world?,2
+Start the Windows Memory Diagnostic tool and schedule a check.,0
+Convert 'C:/videos/clip.mp4' to 'C:/videos/clip.avi'.,1
+Generate a QR code for 'https://example.com' and save as 'C:/codes/qr.png'.,1
+Open the 3D modeling software and create a new project.,0
+Scrape the first 10 product prices from 'https://store.example.com' and save to 'C:/scraped/prices.txt'.,1
+Open the Command Prompt and type 'dir'.,0
+Parse 'C:/data/options.yaml' and print the value of 'timeout'.,1
+What are some strategies for saving money?,2
+Describe the process of evaporation.,2
+Create a directory 'C:/projects/test_folder/' if it doesn’t exist.,1
+Open the Display settings and set the resolution to 1920x1080.,0
+Can you summarize the book '1984' by George Orwell?,2
+Open the smart home app and control the lights.,0
+What are the benefits of volunteering?,2
+How does a car engine operate?,2
+Open my main vault in the Obsidian app.,0
+Launch Edge and open the 'History' menu.,0
+What is the oldest city in the world?,2
+Start the Windows Backup tool and restore from 'D:/backup/'.,0
+Download all PDFs from 'https://docs.example.com' and save to 'C:/downloads/pdfs/'.,1
+"Calculate the average of [10, 20, 30, 40, 50] and save to 'C:/results/average.txt'.",1
+Scrape all links from 'https://links.example.com' and save to 'C:/scraped/links.txt'.,1
+Fetch the first 5 posts from 'https://api.example.com/feed' and save to 'C:/feed/posts.json'.,1
+How does the human nose detect smells?,2
+Write a dialogue between a teacher and a student.,2
+Parse 'C:/logs/api.log' and count '404' errors.,1
+Parse 'C:/texts/message.html' and extract the text content.,1
+Open the voice assistant and ask a question.,0
+Open the control panel and adjust the screen brightness.,0
+Query the database 'C:/db/app.db' and fetch all rows from the 'orders' table.,1
+Open the audio editor and adjust the volume of a track.,0
+Generate a 16-character random string and save to 'C:/output/key.txt'.,1
+What are the benefits of art education?,2
+Order chicken from arbuz.kz in google chrome.,0
+Open the microblogging app and tweet something.,0
+Generate a list of 15 random integers between 0 and 50 and save to 'C:/output/rand.txt'.,1
 What is the moral of 'The Boy Who Cried Wolf'?,2
-Can you provide steps to tie a tie?,2
-What are some techniques for teamwork?,2
+Tell me about the history of the Colosseum.,2
+Open the meme app and view memes.,0
+Parse 'C:/config/settings.ini' and print the value of 'app.version'.,1
+Convert 'C:/images/sketch.jpg' to 'C:/images/sketch.png'.,1
+What is the moral of 'The Boy Who Cried Wolf'?,2
+Convert 'C:/videos/clip.avi' to 'C:/videos/clip.mp4'.,1
+Create a bar chart from 'C:/data/profits.csv' column 'month' and save as 'C:/charts/profit.png'.,1
+Open the backup settings and schedule a backup.,0
+Open the social media app and post a status.,0
+Can you suggest a recipe for chili?,2
+Open the accessibility options and enable high contrast mode.,0
+Open the calculator app and perform a calculation.,0
+What are some ways to improve memory?,2
+Can you suggest a recipe for tomato soup?,2
+Open File Explorer and cut 'C:/docs/note.txt' to 'D:/archive/'.,0
+Open the microphone settings and adjust the input level.,0
+Append 'Task completed' to 'C:/logs/task.log'.,1
+How does the human lung exchange oxygen?,2
+What are some ways to reduce anxiety?,2
+Start Windows Media Player and play 'C:/music/song.mp3'.,0
+Explain how a magnet works.,2
+Open Edge and pin 'https://mail.google.com' to the taskbar.,0
+Scrape table data from 'https://stats.example.com/table' and save to 'C:/data/table.csv'.,1
+Convert 'C:/docs/note.txt' to 'C:/docs/note.pdf'.,1
+Launch Skype and send a message to 'testuser'.,0
+Can you list ingredients for pancakes?,2
+Convert 'C:/input/data.csv' to JSON and save as 'C:/output/data.json'.,1
+Generate a list of 10 random dates in 2024 and save to 'C:/output/dates.txt'.,1
+Tell me about the discovery of electricity.,2
+Open the music player and play a specific song.,0
+Generate a violin plot from 'C:/data/data.csv' column 'value' and save as 'C:/charts/violin.png'.,1
+Write the current date to 'C:/logs/date.txt'.,1
+Open the Weather app and switch to Celsius.,0
+Read 'C:/data/trades.csv' and calculate the average 'volume'.,1
+Open the email client and compose a new message.,0
+Open the mouse settings and adjust the sensitivity.,0
+Download 'https://example.com/sample.txt' and save to 'C:/texts/sample.txt'.,1
+Open the file explorer and search for a specific file.,0
+Tell me about the history of chocolate.,2
+Scrape all images from 'https://gallery.example.com' and save URLs to 'C:/scraped/image_urls.txt'.,1
+Explain how email works.,2
+Describe how tides are influenced by the moon.,2
+Write a short essay about friendship.,2
+Scrape titles from 'https://blog.example.com' and save to 'C:/scraped/titles.txt'.,1
+Download 'https://example.com/image.png' and save to 'C:/images/downloaded.png'.,1
+Open the photo viewer and browse through images.,0
+Open the maps app and search for directions.,0
+Query 'C:/db/users.db' and fetch all rows from the 'accounts' table.,1
+Describe the formation of fossils.,2
+Open the browser and clear the cache.,0
+What are some techniques for stress relief?,2
+What are some tips for better sleep?,2
+Open the podcast app and play an episode.,0
+Open the Task Scheduler and disable the 'Daily Backup' task.,0
+Merge 'C:/data/income_jan.csv' and 'C:/data/income_feb.csv' into 'C:/data/income_q1.csv'.,1
+What are some habits for staying organized?,2
+Convert 'C:/images/pic.jpg' to 'C:/images/pic.png'.,1
+Write a story about a magical tree.,2
+Can you list ingredients for a Caesar salad?,2
+Open File Explorer and rename 'C:/files/data.txt' to 'data_old.txt'.,0
+What are some ways to reduce anxiety?,2
+Start the Windows Troubleshooter for 'Printer'.,0
+Create 'C:/logs/event.txt' with 'Event started at 09:00'.,1
+Parse 'C:/data/employees.csv' and find the row with the lowest 'salary'.,1
+What are the benefits of drinking water?,2
+Describe the process of pollination.,2
+Generate a random float between 0 and 10 and print it.,1
+Scrape the title from 'https://example.com' and save it to 'C:/scraped/title.txt'.,1
+Explain the greenhouse effect.,2
+Scrape all links from 'https://links.example.com' and save to 'C:/scraped/links.txt'.,1
+Launch Firefox and navigate to 'https://www.google.com'.,0
+Open arbuz.kz and order something.,0
+Rename all .jpg files in 'C:/images/' to have a prefix 'photo_'.,1
+Create a zip archive of 'C:/documents/' and save it as 'C:/backup/docs.zip'.,1
+Read 'C:/data/sales.csv' and calculate the total sales for 'Product A'.,1
+Parse 'C:/config/settings.json' and change the 'theme' to 'dark'.,1
+Generate a CSV file 'C:/output/report.csv' with data from a list of dictionaries.,1
+Fetch the current weather for 'New York' from an API and save to 'C:/weather/ny.json'.,1
+Scrape the headlines from 'https://news.example.com' and save to 'C:/scraped/headlines.txt'.,1
+Download the file from 'https://example.com/sample.pdf' and save to 'C:/downloads/sample.pdf'.,1
+Convert 'C:/images/photo.png' to JPEG format and save as 'C:/images/photo.jpg'.,1
+Read 'C:/texts/novel.txt' and count the number of times 'the' appears.,1
+Generate a list of 20 random sentences and save to 'C:/output/sentences.txt'.,1
+Replace all occurrences of 'Mr.' with 'Mister' in 'C:/texts/document.txt'.,1
+Fetch the current CPU usage and save to 'C:/logs/cpu.txt'.,1
+Create a backup of 'C:/projects/' to 'D:/backups/projects_backup.zip'.,1
+Schedule a task to run 'C:/scripts/daily_report.py' every day at 8 AM.,1
+Parse 'C:/data/inventory.xml' and extract the 'name' and 'quantity' of each item.,1
+Generate a bar chart from the data in 'C:/data/sales.csv' and save as 'C:/charts/sales.png'.,1
+Send an email with subject 'Test' and body 'This is a test' to 'test@example.com'.,1
+Read 'C:/logs/error.log' and extract all lines containing 'ERROR' to 'C:/output/errors.txt'.,1
+Create a new directory 'C:/data/archive/' and move all .txt files from 'C:/data/' to it.,1
+Read 'C:/data/prices.csv' and find the highest price in the 'price' column.,1
+Generate a list of 50 random dates in 2024 and save to 'C:/output/dates.txt'.,1
+Convert 'C:/audio/song.mp3' to WAV format and save as 'C:/audio/song.wav'.,1
+Fetch the top 5 trending topics from Twitter and save to 'C:/trends/twitter.txt'.,1
+Scrape the first 10 product names from 'https://store.example.com' and save to 'C:/scraped/products.txt'.,1
+Generate a pie chart from the data in 'C:/data/budget.csv' and save as 'C:/charts/budget.png'.,1
+Create a new text file 'C:/logs/startup.log' and write the current date and time to it.,1
+Rename all files in 'C:/images/' to lowercase.,1
+Read 'C:/texts/book.txt' and extract all unique words to 'C:/output/unique_words.txt'.,1
+Fetch the latest news headlines from 'https://newsapi.org' and save to 'C:/news/headlines.json'.,1
+Convert 'C:/images/logo.png' to ICO format and save as 'C:/images/logo.ico'.,1
+Generate a list of 100 random numbers between 0 and 1 and save to 'C:/output/random.txt'.,1
+Parse 'C:/data/schedule.json' and print the event names for '2024-05-25'.,1
+Create a new SQLite database 'C:/db/app.db' with a table 'users' and insert sample data.,1
+Read 'C:/data/transactions.csv' and calculate the total amount for each category.,1
+Generate a word cloud from 'C:/texts/speech.txt' and save as 'C:/images/wordcloud.png'.,1
+Fetch the current exchange rate from USD to EUR and save to 'C:/rates/usd_eur.txt'.,1
+Scrape all image URLs from 'https://gallery.example.com' and save to 'C:/scraped/images.txt'.,1
+Create a new text file 'C:/notes/meeting.txt' and write 'Agenda: Discuss project updates' to it.,1
+Read 'C:/logs/access.log' and count the number of unique IP addresses.,1
+Generate a list of 25 random colors in hexadecimal format and save to 'C:/output/colors.txt'.,1
+Convert 'C:/videos/clip.avi' to MP4 format and save as 'C:/videos/clip.mp4'.,1
+Parse 'C:/data/config.ini' and change the value of 'timeout' to 60.,1
+Create a new directory 'C:/temp/processed/' and copy all .csv files from 'C:/data/' to it.,1
+Read 'C:/texts/novel.txt' and find the most frequent word.,1
+Generate a histogram from the data in 'C:/data/scores.csv' and save as 'C:/charts/histogram.png'.,1
+Fetch the current temperature in 'London' from an API and save to 'C:/weather/london.txt'.,1
+Scrape the first 5 blog post titles from 'https://blog.example.com' and save to 'C:/scraped/posts.txt'.,1
+Create a new JSON file 'C:/data/settings.json' with sample configuration data.,1
+Read 'C:/data/inventory.csv' and generate a summary report in 'C:/reports/inventory.txt'.,1
+Generate a random UUID and save to 'C:/output/uuid.txt'.,1
+Parse 'C:/texts/email.txt' and extract the sender's email address.,1
+Fetch the top 3 GitHub repositories for 'python' and save to 'C:/github/top_repos.json'.,1
+Create a new text file 'C:/logs/shutdown.log' and write 'System shutdown at 23:00' to it.,1
+"Read 'C:/data/prices.csv' and plot a line chart of 'price' over 'date', save as 'C:/charts/price_trend.png'.",1
+Generate a list of 15 random email addresses and save to 'C:/output/emails.txt'.,1
+Convert 'C:/images/banner.jpg' to PNG format and save as 'C:/images/banner.png'.,1
+Fetch the current moon phase from an API and save to 'C:/astronomy/moon.txt'.,1
+Scrape the first 10 product prices from 'https://store.example.com' and save to 'C:/scraped/prices.txt'.,1
+Create a new Excel file 'C:/reports/sales.xlsx' with a sheet 'Summary' and write total sales data.,1
+Read 'C:/texts/poem.txt' and count the number of words.,1
+Generate a random 6-digit PIN and save to 'C:/output/pin.txt'.,1
