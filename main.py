@@ -1,6 +1,8 @@
 import time
 import json
 import pyautogui
+from io import BytesIO
+import base64
 
 from GUI_functions import (
     click_sequence,
@@ -64,31 +66,23 @@ ALLOWED_MODULES = {
     'pyttsx3'
 }
 
+BASE_URL = "https://n-fac-deploy.vercel.app"
 
 def main():
     executor = CodeExecutor()
     tokenizer = BertTokenizerFast.from_pretrained('./model_output/checkpoint-95')
     model = BertForSequenceClassification.from_pretrained('./model_output/checkpoint-95')
 
-
-    # Example usage: Tokenize and predict
-    
     while True:
         user_input = input("\nEnter command: ").strip()
 
-        # Load the tokenizer
-        
         inputs = tokenizer(user_input, return_tensors="pt", truncation=True, padding=True, max_length=128)
         outputs = model(**inputs)
         predictions = int(outputs.logits.argmax(-1))
-        
 
         if ("--pyt" in user_input):
             predictions = 1
 
-        # if ("notes" in user_input or "todos" in user_input or "obsidian" in user_input):
-        #     predictions = 1
-        
         print(predictions)
         
         if user_input.lower() == 'exit':
@@ -100,62 +94,85 @@ def main():
         
         if predictions == 0:
             done = False
-            # aim="Open my main vault in obsidian app"
             aim = user_input
-            add_prompt = ""
-            history = []
-            while not done:
 
-                # answer, history = ask_gpt4o(aim, add_prompt, history=[])
-                
-                answer, history = ask_gemini_flash(aim, add_prompt, history=history)
-                
-                cleaned_answer = clean_json(answer)
-                try:
-                    answer = json.loads(cleaned_answer)
-                except:
-                    answer, history = ask_gemini_flash(aim, add_prompt, history=history)
-                    cleaned_answer = clean_json(answer)
-                    answer = json.loads(cleaned_answer)
-                    
-                print(answer)
-                for action in answer:
-                    # print(action)
+            # Send initial request to /start_task
+            try:
+                response = requests.post(f"{BASE_URL}/start_task", json={"objective": aim})
+                response.raise_for_status()
+                data = response.json()
+                task_id = data["task_id"]
+                actions = data["actions"]
+                # history = data["history"]
+            except requests.exceptions.RequestException as e:
+                print(f"Error starting task: {e}")
+                continue
+            except KeyError:
+                print("Invalid response from server")
+                continue
+
+            while not done:
+                last_click_failed = False
+                failed_text = ""
+
+                for action in actions:
                     if action['operation_type'] == "press":
                         click_sequence(action["keys"], interval=0.2)
                         time.sleep(1)
-                        add_prompt = ""
-
                     elif action['operation_type'] == "write":
                         for char in action["content"]:
                             pyautogui.write(char)
                         time.sleep(1)
-                        add_prompt = ""
-
                     elif action['operation_type'] == "click":
-                        if len(action["text"].split(" ")) == 1:
-                            # output = click_one_word_ocr((action["text"]))
-                            output = click_easyocr_one_word(action['text'])
+                        text_to_click = action['text']
+                        if len(text_to_click.split(" ")) == 1:
+                            output = click_easyocr_one_word(text_to_click)
                         else:
-                            # output = click_multi_words_ocr(' '.join(action["text"].split()[:3]))
-                            output = click_easyocr_one_word(' '.join(action["text"].split()[:3]))
-                        if (output == True):
+                            output = click_easyocr_one_word(' '.join(text_to_click.split()[:3]))
+                        if output:
                             time.sleep(1)
-                            add_prompt = ""
                         else:
-                            add_prompt = f"Clicking onto {action['text']} failed. Try another method or another text. Everything that was after clicking aborded"
+                            last_click_failed = True
+                            failed_text = text_to_click
                             break
-
                     elif action['operation_type'] == "end":
                         print("Operation Done")
                         done = True
                         break
 
+                if done:
+                    break
+
+                # Take screenshot and encode it
+                screenshot = pyautogui.screenshot()
+                buffered = BytesIO()
+                screenshot.save(buffered, format="JPEG", quality=85)
+                screenshot_base64 = base64.b64encode(buffered.getvalue()).decode("utf-8")
+
+                # Send request to /get_action
+                
+                try:
+                    payload = {
+                        "task_id": task_id,
+                        "screenshot_base64": screenshot_base64,
+                        "last_click_failed": last_click_failed,
+                        "failed_text": failed_text,
+                        # "history": history
+                    }
+                    response = requests.post(f"{BASE_URL}/get_action", json=payload)
+                    response.raise_for_status()
+                    data = response.json()
+                    actions = data["actions"]
+                    # history = data["history"]
+                except requests.exceptions.RequestException as e:
+                    print(f"Error getting next action: {e}")
+                    break
+                except KeyError:
+                    print("Invalid response from server")
+                    break
+
         elif predictions == 1:
             try:
-                # user_input = input("\nEnter your command: ").strip()
-                
-                # Handle special commands
                 if user_input.lower() == 'history':
                     last_commands = executor.history.get_last_n_commands()
                     print("\nLast commands:")
@@ -176,14 +193,12 @@ def main():
                 print("\nGenerating response...")
                 response = executor.generate_response(user_input)
                 
-                # If there's an explanation, show it first
                 if "explanation" in response and response["explanation"]:
                     print("\n📝 Explanation:")
                     print("-" * 50)
                     print(response["explanation"])
                     print("-" * 50)
 
-                # If there's code to execute
                 if "code" in response and response["code"]:
                     print("\nGenerated code:")
                     print("-" * 50)
@@ -222,8 +237,6 @@ def main():
                 error_msg = str(e)
                 print(f"❌ Error: {error_msg}")
                 executor.history.add_command(user_input, "", False, error_msg)
-
-
 
 if __name__ == '__main__':
     main()
