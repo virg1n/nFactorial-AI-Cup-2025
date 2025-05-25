@@ -67,25 +67,38 @@ ALLOWED_MODULES = {
 
 
 def get_voice_command():
-    """Get voice command from microphone"""
+    """Get voice command from microphone with Russian language support"""
     recognizer = sr.Recognizer()
     with sr.Microphone() as source:
-        print("\nListening... (speak your command)")
+        print("\nСлушаю... (говорите команду) / Listening... (speak your command)")
         recognizer.adjust_for_ambient_noise(source)
         try:
-            audio = recognizer.listen(source, timeout=5)
-            print("Processing speech...")
-            text = recognizer.recognize_google(audio)
-            print(f"You said: {text}")
-            return text.strip()
+            audio = recognizer.listen(source, timeout=7)
+            print("Обработка речи... / Processing speech...")
+            
+            # Try Russian first
+            try:
+                text = recognizer.recognize_google(audio, language='ru-RU')
+                print(f"Вы сказали: {text}")
+                # Translate to English
+                translator = GoogleTranslator(source='ru', target='en')
+                translated_text = translator.translate(text)
+                print(f"Translated to English: {translated_text}")
+                return translated_text.strip()
+            except:
+                # If Russian fails, try English
+                text = recognizer.recognize_google(audio, language='en-US')
+                print(f"You said: {text}")
+                return text.strip()
+                
         except sr.WaitTimeoutError:
-            print("No speech detected within timeout")
+            print("Речь не обнаружена / No speech detected")
             return ""
         except sr.UnknownValueError:
-            print("Could not understand the audio")
+            print("Не удалось распознать речь / Could not understand the audio")
             return ""
         except sr.RequestError as e:
-            print(f"Could not request results; {e}")
+            print(f"Ошибка распознавания: {e} / Recognition error: {e}")
             return ""
 
 def main():
@@ -93,23 +106,24 @@ def main():
     tokenizer = BertTokenizerFast.from_pretrained('./model_output/checkpoint-95')
     model = BertForSequenceClassification.from_pretrained('./model_output/checkpoint-95')
 
-    print("\nVoice commands are now enabled!")
-    print("You can type your command or say 'voice command' to use voice input")
-    print("Say 'exit' or type 'exit' to quit")
+    print("\nГолосовые команды включены! / Voice commands are now enabled!")
+    print("Вы можете написать команду или сказать 'голосовая команда' для голосового ввода")
+    print("You can type your command or say 'voice command' or 'голосовая команда' to use voice input")
+    print("Скажите 'выход' или напишите 'exit' для выхода / Say 'выход' or type 'exit' to quit")
 
     while True:
-        print("\nEnter command (or say 'voice command'): ")
-        user_input = input().strip()
+        print("\nВведите команду (или скажите 'голосовая команда') / Enter command (or say 'voice command'): ")
+        user_input = input().strip().lower()
 
-        if user_input.lower() == "voice command":
+        if user_input in ["voice command", "голосовая команда"]:
             user_input = get_voice_command()
             if not user_input:
                 continue
 
-        if user_input.lower() == 'exit':
+        if user_input in ['exit', 'выход']:
             if READ:
-                executor.speak_text("Goodbye!")
-            print("Goodbye! 👋")
+                executor.speak_text("До свидания! Goodbye!")
+            print("До свидания! / Goodbye! 👋")
             break
             
         if not user_input:

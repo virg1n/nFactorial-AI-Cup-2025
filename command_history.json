@@ -1,0 +1,10 @@
+[
+  {
+    "timestamp": "2025-05-25T08:01:05.998666",
+    "command": "Show my notes",
+    "original_command": "Show my notes",
+    "generated_code": "with open(r\"C:\\Users\\bogda\\Documents\\nFacObs\\Notes.md\", 'r') as file:\n    notes = file.read()\nprint(notes)",
+    "success": true,
+    "error": null
+  }
+]
