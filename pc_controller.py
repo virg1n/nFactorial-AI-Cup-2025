@@ -16,7 +16,10 @@ from collections import Counter
 import json
 from pathlib import Path
 import requests
+import pyttsx3
 
+
+READ = True
 # Configure logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -45,7 +48,9 @@ ALLOWED_MODULES = {
     # File format handling
     'json', 'yaml', 'xml', 'csv',
     # Network and web
-    'requests', 'urllib'
+    'requests', 'urllib',
+    # Text to speech
+    'pyttsx3'
 }
 
 class CommandHistory:
@@ -129,6 +134,18 @@ class CodeExecutor:
         self.client = openai.OpenAI()
         self.translator = GoogleTranslator(source='auto', target='en')
         self.history = CommandHistory()
+        # Initialize text-to-speech engine
+        self.tts_engine = pyttsx3.init()
+        
+        # Get available voices and set a more natural voice
+        voices = self.tts_engine.getProperty('voices')
+        # Try to find a natural-sounding voice (usually the second voice is better)
+        if len(voices) > 1:
+            self.tts_engine.setProperty('voice', voices[1].id)
+        
+        # Configure TTS properties for more natural speech
+        self.tts_engine.setProperty('rate', 175)  # Slightly faster, more natural pace
+        self.tts_engine.setProperty('volume', 0.9)
         
     def translate_to_english(self, text: str) -> str:
         """Translate text from Russian to English."""
@@ -272,6 +289,17 @@ class CodeExecutor:
             logging.error(f"Code validation error: {str(e)}")
             return False
 
+    def speak_text(self, text: str, is_execution_output: bool = False):
+        """Speak the given text using text-to-speech."""
+        if READ:
+            try:
+                # Only speak if it's execution output or if is_execution_output is False
+                if not is_execution_output or (is_execution_output and text.strip()):
+                    self.tts_engine.say(text)
+                    self.tts_engine.runAndWait()
+            except Exception as e:
+                logging.error(f"Text-to-speech error: {str(e)}")
+
     def execute_code(self, code: str) -> bool:
         """Execute the generated and validated code."""
         try:
@@ -287,12 +315,29 @@ class CodeExecutor:
             
             # Create a new local namespace
             local_namespace = {}
+
+            # Redirect stdout to capture print output
+            import io
+            from contextlib import redirect_stdout
+            output_buffer = io.StringIO()
             
-            # Execute the code in the isolated namespace
-            exec(cleaned_code, exec_globals, local_namespace)
+            with redirect_stdout(output_buffer):
+                # Execute the code in the isolated namespace
+                exec(cleaned_code, exec_globals, local_namespace)
+            
+            # Get the captured output
+            output = output_buffer.getvalue().strip()
+            
+            # Speak only the execution output
+            if output:
+                print("🔊 Output:", output)
+                self.speak_text(output, is_execution_output=True)
+            
             return True
         except Exception as e:
-            logging.error(f"Code execution error: {str(e)}")
+            error_msg = str(e)
+            logging.error(f"Code execution error: {error_msg}")
+            self.speak_text(f"Error in code execution: {error_msg}", is_execution_output=True)
             return False
 
 def get_user_confirmation(code: str) -> bool:
@@ -312,7 +357,6 @@ def get_user_confirmation(code: str) -> bool:
 def main():
     executor = CodeExecutor()
     
-    print("🤖 PC Controller AI - Type 'exit' to quit")
     print("You can write commands in Russian or English!")
     print("Special commands:")
     print("- 'history': Show last 5 commands")
@@ -328,6 +372,7 @@ def main():
             user_input = input("\nEnter your command: ").strip()
             
             if user_input.lower() == 'exit':
+                executor.speak_text("Goodbye!")
                 print("Goodbye! 👋")
                 break
                 
@@ -386,18 +431,22 @@ def main():
                 else:
                     error_msg = "Code validation failed - potentially unsafe operations detected"
                     print(f"❌ {error_msg}")
+                    executor.speak_text(error_msg, is_execution_output=True)
                     executor.history.add_command(user_input, response["code"], False, error_msg)
             elif not response.get("explanation"):
                 error_msg = "Failed to generate response"
                 print(f"❌ {error_msg}")
+                executor.speak_text(error_msg, is_execution_output=True)
                 executor.history.add_command(user_input, "", False, error_msg)
                 
         except KeyboardInterrupt:
+            executor.speak_text("Goodbye!")
             print("\nGoodbye! 👋")
             break
         except Exception as e:
             error_msg = str(e)
             print(f"❌ Error: {error_msg}")
+            executor.speak_text(f"Error: {error_msg}", is_execution_output=True)
             executor.history.add_command(user_input, "", False, error_msg)
 
 if __name__ == "__main__":

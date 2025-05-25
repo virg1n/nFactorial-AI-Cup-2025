@@ -37,6 +37,9 @@ import requests
 from transformers import BertForSequenceClassification, BertTokenizerFast
 
 from pc_controller import get_user_confirmation, CodeExecutor, CommandHistory
+import pyttsx3
+
+READ = True
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
 
@@ -56,7 +59,9 @@ ALLOWED_MODULES = {
     # File format handling
     'json', 'yaml', 'xml', 'csv',
     # Network and web
-    'requests', 'urllib'
+    'requests', 'urllib',
+    # Text to speech
+    'pyttsx3'
 }
 
 
@@ -209,6 +214,8 @@ def main():
                     executor.history.add_command(user_input, "", False, error_msg)
                     
             except KeyboardInterrupt:
+                if READ:
+                    executor.speak_text("Goodbye!")
                 print("\nGoodbye! 👋")
                 break
             except Exception as e:
