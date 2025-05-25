@@ -1,6 +1,7 @@
 import time
 import json
 import pyautogui
+import speech_recognition as sr
 
 from GUI_functions import (
     click_sequence,
@@ -65,38 +66,64 @@ ALLOWED_MODULES = {
 }
 
 
+def get_voice_command():
+    """Get voice command from microphone"""
+    recognizer = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("\nListening... (speak your command)")
+        recognizer.adjust_for_ambient_noise(source)
+        try:
+            audio = recognizer.listen(source, timeout=5)
+            print("Processing speech...")
+            text = recognizer.recognize_google(audio)
+            print(f"You said: {text}")
+            return text.strip()
+        except sr.WaitTimeoutError:
+            print("No speech detected within timeout")
+            return ""
+        except sr.UnknownValueError:
+            print("Could not understand the audio")
+            return ""
+        except sr.RequestError as e:
+            print(f"Could not request results; {e}")
+            return ""
+
 def main():
     executor = CodeExecutor()
     tokenizer = BertTokenizerFast.from_pretrained('./model_output/checkpoint-95')
     model = BertForSequenceClassification.from_pretrained('./model_output/checkpoint-95')
 
+    print("\nVoice commands are now enabled!")
+    print("You can type your command or say 'voice command' to use voice input")
+    print("Say 'exit' or type 'exit' to quit")
 
-    # Example usage: Tokenize and predict
-    
     while True:
-        user_input = input("\nEnter command: ").strip()
+        print("\nEnter command (or say 'voice command'): ")
+        user_input = input().strip()
 
-        # Load the tokenizer
-        
-        inputs = tokenizer(user_input, return_tensors="pt", truncation=True, padding=True, max_length=128)
-        outputs = model(**inputs)
-        predictions = int(outputs.logits.argmax(-1))
-        
+        if user_input.lower() == "voice command":
+            user_input = get_voice_command()
+            if not user_input:
+                continue
 
-        if ("--pyt" in user_input):
-            predictions = 1
-
-        # if ("notes" in user_input or "todos" in user_input or "obsidian" in user_input):
-        #     predictions = 1
-        
-        print(predictions)
-        
         if user_input.lower() == 'exit':
+            if READ:
+                executor.speak_text("Goodbye!")
             print("Goodbye! 👋")
             break
             
         if not user_input:
             continue
+
+        # Load the tokenizer
+        inputs = tokenizer(user_input, return_tensors="pt", truncation=True, padding=True, max_length=128)
+        outputs = model(**inputs)
+        predictions = int(outputs.logits.argmax(-1))
+
+        if ("--pyt" in user_input):
+            predictions = 1
+        
+        print(predictions)
         
         if predictions == 0:
             done = False
